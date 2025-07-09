@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wage Project Testimonials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome for quote icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Animate.css (optional bounce in) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #f0f4ff, #e0f7ff);
+      font-family: Arial, sans-serif;
+    }
+
+    .testimonials {
+      padding: 60px 20px;
+    }
+
+    .testimonial_para_div {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .testimonial_para_div h2 {
+      font-size: 40px;
+      margin: 0;
+    }
+
+    .testimonial_para_div p {
+      font-size: 20px;
+      color: #555;
+    }
+
+    .scroll-wrapper {
+      width: 100%;
+      max-width: 1300px;
+      overflow: hidden;
+      margin: 0 auto;
+      border-radius: 10px;
+      padding: 10px 0;
+    }
+
+    .bounce-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .scroll-track {
+      display: flex;
+      width: max-content;
+    }
+
+    .scroll-left {
+      animation: scroll-left 30s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .box {
+      min-width: 300px;
+      margin: 0 15px;
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px #000;
+      text-align: center;
+    }
+
+    .box .image img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 5px #fff;
+    }
+
+    .box h2 {
+      font-size: 20px;
+      margin: 10px 0 5px;
+    }
+
+    .box h2 i {
+      color: #ffc107;
+      margin-left: 5px;
+    }
+
+    .box .profession {
+      font-size: 15px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .box .review {
+      font-size: 14px;
+      font-style: italic;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<section class="testimonials">
+
+  <div class="testimonial_para_div">
+    <h2>What Our Customers Say</h2>
+    <p>Join Thousands Of Satisfied Customers Worldwide</p>
+  </div>
+
+  <div class="scroll-wrapper">
+    <div class="bounce-container animate__animated animate__bounceInUp">
+      <div class="scroll-track scroll-left">
+
+        <!-- Box 1 -->
+        <div class="box">
+          <div class="image">
+            <img src="images/person 1.jpg" alt="Amit Sharma">
+          </div>
+          <h2>Amit Sharma <i class="fas fa-quote-right"></i></h2>
+          <p class="profession">Software Engineer</p>
+          <p class="review">“Wage Project made salary tracking incredibly easy. Clean UI and full transparency!”</p>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="box">
+          <div class="image">
+            <img src="images/person 2.jpg" alt="Priya Desai">
+          </div>
+          <h2>Priya Desai <i class="fas fa-quote-right"></i></h2>
+          <p class="profession">Marketing Manager</p>
+          <p class="review">“Managing freelance payments is now effortless. A must-have for remote workers.”</p>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="box">
+          <div class="image">
+            <img src="images/person 3.jpg" alt="Rahul Mehta">
+          </div>
+          <h2>Rahul Mehta <i class="fas fa-quote-right"></i></h2>
+          <p class="profession">Construction Worker</p>
+          <p class="review">“Now I know exactly when and where I worked. Simple, helpful, and effective.”</p>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="box">
+          <div class="image">
+            <img src="images/person 4.jpg" alt="Sneha Roy">
+          </div>
+          <h2>Sneha Roy <i class="fas fa-quote-right"></i></h2>
+          <p class="profession">Graphic Designer</p>
+          <p class="review">“Found reliable clients and tracked payments easily. Great for creatives like me!”</p>
+        </div>
+
+        <!-- Box 5 -->
+        <div class="box">
+          <div class="image">
+            <img src="images/person 5.jpg" alt="Vikram Singh">
+          </div>
+          <h2>Vikram Singh <i class="fas fa-quote-right"></i></h2>
+          <p class="profession">Delivery Executive</p>
+          <p class="review">“Keeps my job records organized. Helps me understand my work patterns well.”</p>
+        </div>
+
+        <!-- Repeat for smooth infinite scroll -->
+        <div class="box">
+          <div class="image">
+            <img src="images/person 1.jpg" alt="Amit Sharma">
+          </div>
+          <h2>Amit Sharma <i class="fas fa-quote-right"></i></h2>
+          <p class="profession">Software Engineer</p>
+          <p class="review">“Wage Project made salary tracking incredibly easy. Clean UI and full transparency!”</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>
