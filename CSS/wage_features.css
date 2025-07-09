@@ -699,11 +699,17 @@ top:30px;
 
 }
 
+.choose_content h2{
+  color: #060d74;
+}
+
 .choose_content p
 {
   position:relative;
 
   top:20px;
+
+  color: #222;
 }
 
 .nexus
@@ -721,6 +727,14 @@ top:30px;
 {
   display:flex;
   gap:3rem;
+}
+
+.boxes p{
+  color: #6d0453;
+}
+
+.boxes h4 {
+  color: #4b0845;
 }
 
 .box1
@@ -742,6 +756,14 @@ top:30px;
 {
   display:flex;
   gap:3rem;
+}
+
+.boxes_choose p{
+  color: #6d0453;
+}
+
+.boxes_choose h4 {
+  color: #4b0845;
 }
 
 
@@ -770,7 +792,7 @@ top:30px;
   top:5px;
   border-radius: 10px;
 
-  background: linear-gradient(to right, #ff00cc, #3333ff);
+  background-color: #4b0845;
 
 
 }
@@ -785,7 +807,7 @@ top:30px;
   top:5px;
   border-radius: 10px;
 
-  background: linear-gradient(to right, #ff00cc, #3333ff);
+  background-color: #4b0845;
 
 
 }
