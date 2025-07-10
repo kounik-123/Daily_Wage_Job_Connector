@@ -78,9 +78,11 @@ nav
 /* change navabr style using javascript */
 .window-scroll
 {
-  background:rgb(163, 205, 218);
-  
-  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+  background: rgba(8, 87, 151, 0.3); /* transparent dark glass */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
 
 }
 
