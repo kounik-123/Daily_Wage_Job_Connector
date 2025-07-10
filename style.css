@@ -24,7 +24,7 @@ line-height:1.7;
 
 color:var(--color-white);
 
- background: linear-gradient(to right, #f3e5f5, #e0f7ff, #cdeeff);
+ background: linear-gradient(135deg, #0a0a23 0%, #1a1440 40%, #4a2b7c 70%, #c42db3 100%);  
   
   background-repeat: no-repeat;
   
