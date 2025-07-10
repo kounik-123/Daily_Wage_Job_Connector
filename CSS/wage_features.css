@@ -666,22 +666,46 @@ margin-bottom:5rem;
 
 
 /*==========================================  Choose Category  =========================================*/
+.choose_section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* প্রয়োজনে adjust করো */
+  overflow: hidden;
+}
+
+/* 🔹 ভিডিওটা choose_section এর ব্যাকগ্রাউন্ড হবে */
+.bgVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99%;
+  border-radius: 30px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* 🔹 Overlay (ঐচ্ছিক) — লেখার readability বাড়াতে */
 
 
-.choose_container
-{
-  width:1400px;
-  height:900px;
- border:2px solid black;
- position:relative;
- top:10px;
- text-align: center;
- border-radius: 35px;
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(100px);
-      z-index:10;
+/* 🔹 Container (গ্লাস বক্স) উপরে থাকবে */
+.choose_container {
+  position: relative;
+  z-index: 3;
 
+  width: 1400px;
+  height: 900px;
+  margin: auto;
+  margin-top: 30px;
+  position: relative;
+  top: -37px;
+  border-radius: 35px;
+  border: 2px solid black;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(100px);
 }
 
 .choose_content
@@ -849,6 +873,16 @@ top:30px;
           top:60px;
 
 }
+
+.box1,
+.box2 {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(25px); /* 🎯 blur effect here */
+  -webkit-backdrop-filter: blur(25px); /* for Safari */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
 
 .uil-shield
 {
