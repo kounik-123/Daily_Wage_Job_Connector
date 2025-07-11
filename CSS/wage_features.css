@@ -675,17 +675,10 @@ margin-bottom:5rem;
 .choose_section {
   position: relative;
   width: 100%;
-  height: 100vh; /* প্রয়োজনে adjust করো */
+  height: 100vh; 
   overflow: hidden;
 }
 
-/* 🔹 ভিডিওটা choose_section এর ব্যাকগ্রাউন্ড হবে */
-
-
-/* 🔹 Overlay (ঐচ্ছিক) — লেখার readability বাড়াতে */
-
-
-/* 🔹 Container (গ্লাস বক্স) উপরে থাকবে */
 .choose_container {
   position: relative;
   z-index: 3;
