@@ -77,9 +77,11 @@ nav
 /* change navabr style using javascript */
 .window-scroll
 {
-  background:rgb(163, 205, 218);
-  
-  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+  background: rgba(8, 87, 151, 0.3); /* transparent dark glass */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
 
 }
 
@@ -177,7 +179,7 @@ text-align: center;
 
 .nav_menu a
 {
-    color:rgb(10, 39, 94);
+    color:whitesmoke;
 
     font-weight: bold;
 
@@ -265,13 +267,16 @@ text-align: center;
 }
 
 
-.home .content h3 
+.home_1 .content h3 
 {
-  color: #3d6778;
+  color: #fcfdfd;
 
   font-size: 5rem;
 
   text-align: center;
+
+  position: relative;
+  top: 150px;
 }
 
 
@@ -333,28 +338,28 @@ text-align: center;
 .whyUs__item span 
 {
   font-size: 2rem;
- 
-  background: linear-gradient(to right, #dd81cc, #6565c2);
-      -webkit-background-clip: text;
-    
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-  
-      color: rgb(245, 245, 245);
-  
-      flex-shrink: 0;
-  
-      height: 50px;
-  
-      width: 45px;
-  
-      border-radius: 10px;
-  
-      display: flex;
-  
-      align-items: center;
-  
-      justify-content: center;
+
+  color: rgb(254, 254, 255);
+
+  background:  #1e47cf;
+
+  height: 50px;
+
+  width: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: transparent;
+
+  border-radius: 10px;
+
+  flex-shrink: 0;
+
+  text-align: center;
 }
 
 
@@ -412,19 +417,21 @@ text-align: center;
   width: 100%;
 }
 
-.section__header h1 
+.section__header_1 h1 
 {
   font-size: 3rem;
 
-  color: #3d6778;
+  color: white;
 }
 
 
-.section__header h4 
+.section__header_1 h4 
 {
   font-size: 1.5rem;
 
   margin-bottom: 2rem;
+
+  color: wheat;
 }
 
 
@@ -439,6 +446,9 @@ text-align: center;
   justify-content: center;
   
   margin-top: 3rem, 2rem, 5rem, 2rem;
+
+  position: relative;
+  top: 45px;
 }
 
 
@@ -533,6 +543,10 @@ text-align: center;
 
 /*---------meet our team------------*/
 
+.container h2{
+  color: white;
+}
+
 .testimonials_container h2 
 {
   text-align: center;
@@ -559,7 +573,7 @@ text-align: center;
 }
 
 
-.avatar 
+.avatar_1 
 {
   width: 100px;
   
@@ -577,9 +591,9 @@ text-align: center;
 
 .avatar img 
 {
-  width: 100%;
+  width: 150%;
   
-  height: 100%;
+  height: 150%;
   
   object-fit: cover; /* This makes sure the image fills the circle nicely */
 }
@@ -588,6 +602,10 @@ text-align: center;
 .testimonial_info
 {
     text-align:center;
+}
+
+.testimonial_info h5{
+  color: whitesmoke;
 }
 
 
@@ -600,7 +618,14 @@ text-align: center;
     margin-top:3rem;
 
     position:relative;
+
+    color: wheat;
 }
+
+.testimonial_info small{
+  color: whitesmoke;
+}
+
 
 
 .testimonial_body::before
@@ -660,7 +685,7 @@ text-align: center;
 {
   font-size: 3rem;
   
-  color: #3d6778;
+  color: #ffffff;
 }
 
 
@@ -669,6 +694,7 @@ text-align: center;
   font-size: 1.5rem;
   
   margin-bottom: 2rem;
+  color: wheat;
 }
 
 
@@ -1475,7 +1501,7 @@ text-align: center;
 
 .home .content h3 
 {
-  color: #3d6778;
+  color: #ffffff;
 
   font-size: 5rem;
 
@@ -1491,7 +1517,7 @@ text-align: center;
 {
   font-size: 1.1rem;
   
-  color: #070523;
+  color: wheat;
   
   padding: 1rem 0;
 
@@ -1502,6 +1528,7 @@ text-align: center;
   line-height: 2.5;
   
   text-align: center;
+
 }
 
 
@@ -1952,7 +1979,7 @@ text-align: center;
 
   .Main_card h1 
   {
-      color: #3d6778;
+      color: #f7f7f7;
 
       font-size: 3rem;
 

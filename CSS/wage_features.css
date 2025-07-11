@@ -173,14 +173,14 @@ text-align: center;
 
     right:40%;
 
-
+   
 
     
 }
 
 .nav_menu a
 {
-    color:rgb(10, 39, 94);
+    color:whitesmoke;
 
     font-weight: bold;
 
@@ -318,7 +318,7 @@ margin-bottom:5rem;
   position: relative;
   left: 40px;
   display:flex;
- 
+  color: wheat;
 }
 
 .blink_dot 
@@ -406,6 +406,8 @@ margin-bottom:5rem;
         position:relative;
 
         top:50px;
+
+        color: white;
     }
 
     .get_started_demo
@@ -501,7 +503,7 @@ margin-bottom:5rem;
 
       font-size:25px;
 
-      color:blue;
+      color:rgb(77, 77, 243);
 
       cursor:pointer;
     }
@@ -523,7 +525,7 @@ margin-bottom:5rem;
 
       cursor:pointer;
 
-
+      color: white;
     }
 
      .users
@@ -574,6 +576,8 @@ margin-bottom:5rem;
     position:relative;
 
     top:-2px;
+
+    color: wheat;
   }
 
   .five_star
@@ -643,6 +647,8 @@ margin-bottom:5rem;
 .rating p
 {
   font-weight: bold;
+
+  color: wheat;
 }
 
 
@@ -674,16 +680,7 @@ margin-bottom:5rem;
 }
 
 /* 🔹 ভিডিওটা choose_section এর ব্যাকগ্রাউন্ড হবে */
-.bgVideo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 99%;
-  border-radius: 30px;
-  object-fit: cover;
-  z-index: 1;
-}
+
 
 /* 🔹 Overlay (ঐচ্ছিক) — লেখার readability বাড়াতে */
 
@@ -703,7 +700,8 @@ margin-bottom:5rem;
   border: 2px solid black;
   text-align: center;
 
-  background: rgba(255, 255, 255, 0.1);
+ 
+  font-family: 'Segoe UI', sans-serif;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(100px);
 }
@@ -718,16 +716,19 @@ top:30px;
 }
 
 .choose_content h2{
-  color: #060d74;
+  color:  #f1e5ca;
+  font-size: 35px;
+  position: relative;
+  top: 25px;
 }
 
 .choose_content p
 {
   position:relative;
 
-  top:20px;
+  top:35px;
 
-  color: #222;
+  color: #ffffff;
 }
 
 .nexus
@@ -741,18 +742,33 @@ top:30px;
     -webkit-background-clip: text; 
 }
 
+.box_background{
+  background: radial-gradient(circle at 40% 70%, #a6cfff,  #0a0f3b,#000000);
+  color: #f0faff;
+  font-family: 'Segoe UI', sans-serif;
+  height: 900px;
+  width: 1360px;
+  border: solid black;
+  border-radius: 20px;
+  position: relative;
+  top: -42px;
+  left: -15px;
+}
 .boxes
 {
   display:flex;
   gap:3rem;
+
 }
 
 .boxes p{
-  color: #6d0453;
+     color: #f9f182;
+     font-size: 15px;
 }
 
 .boxes h4 {
-  color: #4b0845;
+  color: #ffffff;
+  font-size: 18px;
 }
 
 .box1
@@ -777,11 +793,13 @@ top:30px;
 }
 
 .boxes_choose p{
-  color: #6d0453;
+      color: #f9f182;
+      font-size: 15px;
 }
 
 .boxes_choose h4 {
-  color: #4b0845;
+  color: #ffffff;
+  font-size: 18px;
 }
 
 
@@ -810,7 +828,7 @@ top:30px;
   top:5px;
   border-radius: 10px;
 
-  background-color: #4b0845;
+  background-color: #8d1283;
 
 
 }
@@ -825,7 +843,7 @@ top:30px;
   top:5px;
   border-radius: 10px;
 
-  background-color: #4b0845;
+  background-color: #8d1283;
 
 
 }
@@ -972,14 +990,14 @@ font-size: 23px;
 
     .stat-box h2 {
       font-size: 2rem;
-      color: #222;
+      color: #ffffff;
       opacity: 0;
       animation: fadeIn 1.5s ease forwards;
     }
 
     .stat-box p {
       font-size: 1.1rem;
-      color: #063392;
+      color: #99d6e5;
       margin-top: 10px;
     }
 
@@ -1011,14 +1029,14 @@ font-size: 23px;
 
 .testimonial-title h2 {
   font-size: 42px;
-  color: #333;
+  color: #f1e5ca;
   position:relative;
   top:30px;
 }
 
 .testimonial-title p {
   font-size: 18px;
-  color: #666;
+  color: #e9d7a6;
    position:relative;
   top:50px;
 }
@@ -1100,7 +1118,7 @@ font-size: 23px;
   font-size: 20px;
   font-weight: bold;
   margin-top: 15px;
-  color: #333;
+  color: #000000;
 }
 
 .testimonial-card h3 i {
@@ -1151,12 +1169,12 @@ font-size: 23px;
 {
   height:500px;
   width:1200px;
-  border:2px solid black;
+  border:2px solid rgb(226, 182, 182);
   position:relative;
   left:22rem;
   border-radius:26px;
-   background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+   background: rgba(156, 204, 211, 0.1);
+      box-shadow: 0 8px 32px rgba(146, 214, 219, 0.25);
       backdrop-filter: blur(30px);
 }
 
@@ -1167,7 +1185,7 @@ font-size: 23px;
     left:400px;
 
     top:84px;
-  
+  color: #f1e5ca;
 }
 
 .ready_to_flow p
@@ -1177,6 +1195,7 @@ font-size: 23px;
     left:200px;
 
     top:97px;
+    color: #ffffff;
 }
 
  #right1
@@ -1261,7 +1280,7 @@ font-size: 23px;
       top:-30px;
 
       left:60px;
-
+      color: white;
 
     }
 
