@@ -623,3 +623,53 @@ body {
     }
 
     
+
+
+
+/*------------wallet-----------*/
+.export-btn_1 {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      position: relative;
+      left: 770px;
+      top: 0px;
+    }
+
+    .export-btn_2 {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+       position: relative;
+      left: -165px;
+      top: 0px;
+      width: 150px;
+    }
+
+    .export-btn_1 i {
+    position: relative;
+    font-size: 20px;
+    left: -5px;
+   }
+
+   .export-btn_2 i {
+    position: relative;
+    font-size: 20px;
+    left: -10px;
+   }
+
+    .export-btn_1:hover {
+      background: #007bff;
+      color: white;
+    }
+
+     .export-btn_2:hover {
+      background: #007bff;
+      color: white;
+    }
