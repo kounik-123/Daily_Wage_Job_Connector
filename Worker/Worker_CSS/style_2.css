@@ -44,6 +44,8 @@ body {
   margin-right: 10px;
 }
 
+
+
 .info h4 {
   font-size: 16px;
   margin-bottom: 2px;
@@ -53,6 +55,7 @@ body {
   font-size: 12px;
   color: #888;
 }
+
 
 .menu {
   display: flex;
@@ -106,6 +109,15 @@ body {
   background-color: #ffffff;
   padding: 15px 30px;
   border-bottom: 1px solid #e0e0e0;
+  width: 1670px;
+  position: relative;
+  left: 240px;
+  top: 10px;
+  border-radius: 10px;
+  background-color: rgb(217, 247, 255);
+    
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
 }
 
 .topbar h2 {
@@ -136,15 +148,22 @@ body {
   border-radius: 50%;
 }
 
+
 .user-profile {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+.avatar i {
+  font-size: 32px;
+  color: #3f51b5;
+}
+
 .user-info .name {
   font-size: 14px;
   font-weight: 600;
+  display: block;
 }
 
 .user-info .email {
@@ -159,6 +178,10 @@ body {
   padding: 25px 30px;
   margin-top: 20px;
   border-radius: 10px;
+  width: 1670px;
+  position: relative;
+  left: 240px;
+  top: 20px;
 }
 
 /*---------------- Dashboard Stats ----------------*/
@@ -166,17 +189,22 @@ body {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .stat-card {
   background: #fffefc;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+
   height: 152px;
-  width: 390px;
+  width: 395px;
   position: relative;
+  left: 250px;
+   background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(7, 9, 139, 0.25);
+      backdrop-filter: blur(50px);
+
 }
 
 .stat-title {
@@ -193,7 +221,7 @@ body {
 
 .stat-subtext {
   font-size: 13px;
-  margin-top: 4px;
+  margin-top: 15px;
 }
 
 .green { color: #0a8754; }
@@ -203,8 +231,8 @@ body {
 
 .icon {
   position: absolute;
-  top: 3px;
-  right: 20px;
+  top: 12px;
+  right: 33px;
   font-size: 30px;
 }
 
@@ -213,7 +241,10 @@ body {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 30px;
+  width: 1670px;
+  position: relative;
+  left: 240px;
 }
 
 .box {
@@ -222,7 +253,9 @@ body {
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
+  position: relative;
+  left: 20px;
 }
 
 .box h3 {
@@ -245,6 +278,38 @@ body {
   color: gray;
   font-size: 14px;
 }
+
+
+
+
+/*-----------active page------------*/
+header {
+      background: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      top: -1004px;
+      left: 246px;
+      width: 1650px;
+
+   
+    }
+
+    header h2 {
+      margin: 0;
+    }
+
+    
+ .card-container_1 {
+      position: relative;
+      top: -1010px;
+      left: 240px;
+      width: 1670px;
+      height: 380px;
+    }
 
 .badge {
   display: inline-block;
