@@ -202,6 +202,11 @@ body {
     left: -5px;
    }
 
+   .export-btn:hover{
+    background-color: #1f3de4;
+  color: #ffffff;
+   }
+
 .card-container{
     height: 410px;
     width: 1300px;
