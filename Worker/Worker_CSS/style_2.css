@@ -276,11 +276,48 @@ body {
 .purple { color: #9333ea; }
 .orange { color: #f97316; }
 
-.icon {
+.icon_1 {
   position: absolute;
   top: 12px;
   right: 33px;
   font-size: 30px;
+  height: 45px;
+  width: 41px;
+  border-radius: 10px;
+  background-color: #ece4b6;
+}
+
+.icon_2 {
+  position: absolute;
+  top: 12px;
+  right: 33px;
+  font-size: 30px;
+  height: 45px;
+  width: 41px;
+  border-radius: 10px;
+  background-color: #ebbeeb;
+}
+
+.icon_3 {
+  position: absolute;
+  top: 12px;
+  right: 33px;
+  font-size: 30px;
+  height: 45px;
+  width: 41px;
+  border-radius: 10px;
+  background-color: #b1f7f7;
+}
+
+.icon_4 {
+  position: absolute;
+  top: 12px;
+  right: 33px;
+  font-size: 30px;
+  height: 45px;
+  width: 41px;
+  border-radius: 10px;
+  background-color: #a9a8f0;
 }
 
 /*---------------- Container ----------------*/
@@ -300,6 +337,7 @@ body {
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   width: 100%;
+  height: 470px;
   max-width: 800px;
   position: relative;
   left: 20px;
@@ -318,6 +356,8 @@ body {
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
+  width: 750px;
+  height: 115px;
 }
 
 .job_2 {
@@ -325,6 +365,8 @@ body {
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
+  width: 750px;
+  height: 115px;
 }
 
 .job_3 {
@@ -332,6 +374,8 @@ body {
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
+  width: 750px;
+  height: 115px;
 }
 
 .job_4 {
@@ -339,26 +383,62 @@ body {
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
+  width: 750px;
+  height: 115px;
 }
 
 .job-title {
   font-weight: bold;
+  font-size: 20px;
+  width: 225px;
 }
 
 .company {
   color: gray;
-  font-size: 14px;
-}
-
-
-.badge_available{
-  height: 100px;
-  width: 150px;
-  background-color: #2e5acc;
-  border-radius: 10px;
+  font-size: 15px;
   position: relative;
   top: 10px;
-  left: 100px;
 }
+
+
+.box_1 {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  width: 109%;
+  height: 470px;
+  max-width: 800px;
+  position: relative;
+  top: -455px;
+  left: 810px;
+}
+.amount_1 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      
+      height: 50px;
+      width: 150px;
+      position: relative;
+      top: -29px;
+      left: 580px;
+    
+    }
+
+    .status_completed_1 {
+      margin-top: 5px;
+      padding: 2px 2px 2px 8px;
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 10px;
+      height: 25px;
+      width: 88px;
+      position: relative;
+      left: 20px;
+      background-color: #7274eb;
+      color: #ffffff;
+       
+    }
 
 
