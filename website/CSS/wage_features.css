@@ -1433,3 +1433,157 @@ footer ul li a:hover {
   left:-40px;
 
 }
+
+
+/* ===================== RESPONSIVE DESIGN ======================== */
+
+/* For tablets and below (up to 1024px) */
+@media screen and (max-width: 1024px) {
+  .container {
+    width: var(--container-width-md);
+  }
+
+  .nav_menu {
+    gap: 2rem;
+    right: 10%;
+  }
+
+  .choose_container {
+    width: 90%;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .boxes, .boxes_choose {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box1, .box2 {
+    left: 0;
+    width: 80%;
+    top: 0;
+    margin-top: 2rem;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    padding: 2rem;
+    gap: 3rem;
+    height: auto;
+  }
+
+  .stat-box {
+    left: 0;
+    top: 0;
+  }
+
+  .testimonial-wrapper {
+    padding: 0 1rem;
+  }
+
+  .testimonial-card {
+    width: 90%;
+  }
+
+  .ready_to_flow_box {
+    width: 90%;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  .get_started_demo1 {
+    flex-direction: column;
+    gap: 1rem;
+    left: 0;
+    top: 5rem;
+  }
+
+  .footer_container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+
+/* For mobile devices (up to 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    width: var(--container-width-sm);
+  }
+
+  .nav_menu {
+    display: none; /* Hide navbar links for now; consider using hamburger */
+  }
+
+  .button {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header_container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .header_left_1 {
+    width: 90%;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  .header_right {
+    left: 0;
+  }
+
+  .header_right-image img {
+    max-width: 100%;
+  }
+
+  .choose_container {
+    padding: 1rem;
+    height: auto;
+    width: 95%;
+  }
+
+  .footer_container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .get_started_demo,
+  .get_started_demo1 {
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+  }
+
+  .started, .started_1 {
+    left: 0;
+    text-align: center;
+  }
+
+  .demo, .demo_1, .get_started, .get_started_1 {
+    width: 90%;
+  }
+
+  .ready_to_flow h2,
+  .ready_to_flow p {
+    left: 1rem;
+    text-align: center;
+  }
+
+  .ready_to_flow_box {
+    width: 95%;
+    left: 0;
+  }
+}
