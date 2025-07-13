@@ -10,7 +10,7 @@ top:100px;
 
 .available_boxes
 {
-    position:relative;
+    position:absolute;
 
     display:flex;
 
@@ -18,7 +18,13 @@ top:100px;
 
     gap:20px;
 
-    left:-50px;
+    left:240px;
+
+   
+
+    top:90px;
+
+   
 }
 
 
@@ -32,7 +38,7 @@ top:100px;
 
     border:2px solid black;
 
-    left:300px;
+    left:10px;
 
     top:117px;
 
