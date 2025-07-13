@@ -186,7 +186,8 @@ body {
 }
 
 .export-btn_1 {
-      background-color: white;
+      background-color: #1f3de4;
+      color: white;
       border: 1px solid #ccc;
       padding: 10px 16px;
       border-radius: 6px;
@@ -204,12 +205,13 @@ body {
    }
 
    .export-btn_1:hover{
-    background-color: #1f3de4;
+    background-color: #1f8be4;
   color: #ffffff;
    }
 
    .export-btn_2 {
-      background-color: white;
+      background-color: rgb(58, 143, 19);
+      color: white;
       border: 1px solid #ccc;
       padding: 10px 16px;
       border-radius: 6px;
@@ -228,7 +230,7 @@ body {
    }
 
    .export-btn_2:hover{
-    background-color: #18b120;
+    background-color: #ee985f;
   color: #ffffff;
    }
 

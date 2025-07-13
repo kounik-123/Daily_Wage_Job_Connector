@@ -173,7 +173,7 @@ body {
 
 /*---------------- Welcome Box ----------------*/
 .welcome-box {
-  background-color: #2155ff;
+  background-color: #436df7;
   color: white;
   padding: 25px 30px;
   margin-top: 20px;
@@ -192,8 +192,8 @@ body {
   margin-top: 50px;
 }
 
-.stat-card {
-  background: #fffefc;
+.stat-card_1 {
+  
   border-radius: 12px;
   padding: 20px;
 
@@ -201,26 +201,73 @@ body {
   width: 395px;
   position: relative;
   left: 250px;
-   background: rgba(255, 255, 255, 0.1);
+  background-color: rgb(166, 243, 166);
+      box-shadow: 0 8px 20px rgba(7, 9, 139, 0.25);
+      backdrop-filter: blur(50px);
+
+}
+
+.stat-card_2 {
+  
+  border-radius: 12px;
+  padding: 20px;
+
+  height: 152px;
+  width: 395px;
+  position: relative;
+  left: 250px;
+  background-color: rgb(121, 209, 212);
+      box-shadow: 0 8px 20px rgba(7, 9, 139, 0.25);
+      backdrop-filter: blur(50px);
+
+}
+
+
+.stat-card_3 {
+  
+  border-radius: 12px;
+  padding: 20px;
+
+  height: 152px;
+  width: 395px;
+  position: relative;
+  left: 250px;
+  background-color: rgb(202, 156, 240);
+      box-shadow: 0 8px 20px rgba(7, 9, 139, 0.25);
+      backdrop-filter: blur(50px);
+
+}
+
+
+.stat-card_4 {
+  
+  border-radius: 12px;
+  padding: 20px;
+
+  height: 152px;
+  width: 395px;
+  position: relative;
+  left: 250px;
+  background-color: rgb(228, 153, 194);
       box-shadow: 0 8px 20px rgba(7, 9, 139, 0.25);
       backdrop-filter: blur(50px);
 
 }
 
 .stat-title {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   margin-bottom: 8px;
 }
 
 .stat-value {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: #1c1c1c;
 }
 
 .stat-subtext {
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 15px;
 }
 
@@ -263,8 +310,32 @@ body {
   font-size: 18px;
 }
 
-.job, .transaction {
-  background: #f9fafb;
+
+
+
+.job_1 {
+  background: #a4ccf3;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.job_2 {
+  background: #b4f3a4;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.job_3 {
+  background: #f3b6a4;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.job_4 {
+  background: #e6a4f3;
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
@@ -280,5 +351,14 @@ body {
 }
 
 
+.badge_available{
+  height: 100px;
+  width: 150px;
+  background-color: #2e5acc;
+  border-radius: 10px;
+  position: relative;
+  top: 10px;
+  left: 100px;
+}
 
 

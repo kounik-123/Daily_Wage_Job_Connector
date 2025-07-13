@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+}
+
+/*---------------- Sidebar ----------------*/
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+}
+
+.top-section {
+  padding: 0 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.avatar i {
+  font-size: 40px;
+  color: #3f51b5;
+  margin-right: 10px;
+}
+
+
+
+.info h4 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.info span {
+  font-size: 12px;
+  color: #888;
+}
+
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.menu-item i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.menu-item:hover {
+  background-color: #f1f3ff;
+  color: #3f51b5;
+}
+
+.menu-item.active {
+  background-color: #e1eaff;
+  color: #3f51b5;
+}
+
+.bottom-section {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*---------------- Content Wrapper ----------------*/
+.main-content {
+  margin-left: 230px;
+  padding: 20px;
+}
+
+/*---------------- Header / Topbar ----------------*/
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  border-bottom: 1px solid #e0e0e0;
+  width: 1670px;
+  position: relative;
+  left: 240px;
+  top: 10px;
+  border-radius: 10px;
+  background-color: rgb(217, 247, 255);
+    
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+}
+
+.topbar h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification-icon {
+  font-size: 20px;
+  position: relative;
+}
+
+.notification-icon::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
+}
+
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar i {
+  font-size: 32px;
+  color: #3f51b5;
+}
+
+.user-info .name {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+}
+
+.user-info .email {
+  font-size: 12px;
+  color: #666;
+}
+
+
+/*-----------main part---------------*/
+
+ .job-listings {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .job-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 14px 20px rgba(255, 255, 255, 0.05);
+      width: 500px;
+      height: 355px;
+      padding: 20px;
+      position: relative;
+      top: 55px;
+      left: 110px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 10px 20px;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .badge {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .urgent {
+      background: #ffe5e5;
+      color: #d8000c;
+    }
+
+    .available {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #e6ffed;
+      color: #389e0d;
+    }
+
+    .active {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #e6f7ff;
+      color: #1890ff;
+    }
+
+    .completed {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f0f0f0;
+      color: #888;
+    }
+
+    .info {
+      font-size: 14px;
+      color: #666;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .info span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .tags {
+      margin: 10px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin: 3px 3px 0 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .buttons button {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .apply {
+      background: #1677ff;
+      color: white;
+      border: none;
+    }
+
+    .progress-section {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #1890ff;
+    }
