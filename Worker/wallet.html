@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sidebar</title>
   <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
-  <link rel="stylesheet" href="Worker_CSS/style_2.css" />
+  <link rel="stylesheet" href="Worker_CSS/wallet.css" />
 </head>
 <body>
 
@@ -20,9 +20,9 @@
       </div>
 
       <nav class="menu">
-        <a href="dashboard_1.html" class="menu-item "><i class="uil uil-estate"></i>Dashboard</a>
+        <a href="dashboard_1.html" class="menu-item active"><i class="uil uil-estate"></i>Dashboard</a>
         <a href="available_jobs.html" class="menu-item"><i class="uil uil-gift"></i>Available Jobs</a>
-        <a href="dashboard_1.html" class="menu-item"><i class="uil uil-clock-three"></i>Active Jobs</a>
+        <a href="active.html" class="menu-item"><i class="uil uil-clock-three"></i>Active Jobs</a>
         <a href="past_job.html" class="menu-item"><i class="uil uil-check-circle"></i>Past Jobs</a>
         <a href="wallet.html" class="menu-item active"><i class="uil uil-wallet"></i>Wallet</a>
         <a href="#" class="menu-item"><i class="uil uil-search"></i>Search Jobs</a>
@@ -52,58 +52,104 @@
     </div>
   </div>
 
- <header>
-    <h2>Wallet</h2>
-    <button class="export-btn_1"><i class="uil uil-import"></i>Export History</button>
-    <button class="export-btn_2"><i class="uil uil-plus"></i>Add Funds</button>
-  </header>
-   
+  <!-- Welcome Box -->
+  <div class="welcome-box">
+    <h3>Wallet</h3>
+   <button class="export-btn_1"><i class="uil uil-import"></i>Export History</button>
+   <button class="export-btn"><i class="uil uil-import"></i>Export History</button>
+  </div>
 
 
- <main>
-    <div class="card-container">
-      <div class="job-card">
-        <div>
-          <h3>Data Analyst <span class="completed-label">✅ Completed</span></h3>
-          <p><strong>Analytics Pro</strong></p>
-          <p>Analyze large datasets to derive actionable insights for business decisions.</p>
-          <div class="job-details">
-            <div class="job-details_1">📍 San Francisco, CA</div>
-            <div class="job-details_1">💵 $55/hr</div>
-            <div class="job-details_2">⏳ 1 month</div>
-            <div class="job-details_2">📅 12/1/2023</div>
-          </div>
-          <div>
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">+1 more</span>
-          </div>
-          <button class="view-btn">View Details</button>
-        </div>
+ <!---------------card-------------->
+  <div class="dashboard-stats">
+      <!-- Active Workers -->
+      <div class="stat-card">
+        <div class="stat-title">Active Workers</div>
+        <div class="stat-value">24</div>
+
+        <div class="icon blue">👥</div>
       </div>
-      <div class="job-card">
-        <div>
-          <h3>Digital Marketing Specialist <span class="completed-label">✅ Completed</span></h3>
-          <p><strong>MarketGrow</strong></p>
-          <p>Execute comprehensive digital marketing campaigns across multiple channels.</p>
-          <div class="job-details">
-            <div class="job-details_1">📍 Chicago, IL</div>
-            <div class="job-details_1">💵 $45/hr</div>
-            <div class="job-details_2">⏳ 5 weeks</div>
-            <div class="job-details_2">📅 11/20/2023</div>
-          </div>
-          <div>
-            <span class="tag">Google Ads</span>
-            <span class="tag">Facebook Ads</span>
-            <span class="tag">SEO</span>
-            <span class="tag">+1 more</span>
-          </div>
-          <button class="view-btn">View Details</button>
-        </div>
+
+      <!-- Active Projects -->
+      <div class="stat-card">
+        <div class="stat-title">Active Projects</div>
+        <div class="stat-value">8</div>
+
+        <div class="icon green">💼</div>
+      </div>
+
+      <!-- Total Revenue -->
+      <div class="stat-card">
+        <div class="stat-title">Total Revenue</div>
+        <div class="stat-value">$142K</div>
+        <div class="icon purple">💰</div>
+      </div>
+
+      <!-- Productivity -->
+      <div class="stat-card">
+        <div class="stat-title">Productivity</div>
+        <div class="stat-value">94%</div>
+
+        <div class="icon orange">📈</div>
       </div>
     </div>
- </main>
+
+  </div>
+
+
+<!---------container------------->
+  <div class="container">
+  <!-- Recent Jobs -->
+  <div class="box">
+    <h3>Recent Jobs</h3>
+
+    <div class="job">
+      <div class="job-title">Senior React Developer <span class="rate">$65/hr</span></div>
+      <div class="company">TechCorp Inc.</div>
+      <span class="badge available">available</span>
+    </div>
+
+    <div class="job">
+      <div class="job-title">UI/UX Designer <span class="rate">$50/hr</span></div>
+      <div class="company">Design Studio</div>
+      <span class="badge active">active</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 65%;"></div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Data Analyst <span class="rate">$55/hr</span></div>
+      <div class="company">Analytics Pro</div>
+      <span class="badge completed">completed</span>
+    </div>
+  </div>
+
+  <!-- Recent Transactions -->
+  <div class="box">
+    <h3>Recent Transactions</h3>
+
+    <div class="transaction">
+      <div>Data Analyst <span class="amount">$8,000</span></div>
+      <small>1/10/2024</small>
+      <span class="badge completed">completed</span>
+    </div>
+
+    <div class="transaction">
+      <div>UI/UX Designer <span class="amount">$3,500</span></div>
+      <small>1/15/2024</small>
+      <span class="badge pending">pending</span>
+    </div>
+
+    <div class="transaction">
+      <div>Digital Marketing Specialist <span class="amount">$5,200</span></div>
+      <small>1/5/2024</small>
+      <span class="badge completed">completed</span>
+    </div>
+  </div>
+</div>
+
+
 
 
   <script src="script.js"></script>

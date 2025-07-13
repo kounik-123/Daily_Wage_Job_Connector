@@ -193,9 +193,15 @@ body {
       cursor: pointer;
       font-weight: 500;
       position: relative;
-      left: 1470px;
-      top: -27px;
+      left: 1440px;
+      top: -35px;
     }
+
+    .export-btn:hover{
+    background-color: #195c08;
+  color: #ffffff;
+   }
+
 
 .card-container_1{
     height: 410px;
