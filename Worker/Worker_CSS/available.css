@@ -1,0 +1,106 @@
+.available_container h2
+{
+position:absolute;
+
+left:300px;
+
+top:100px;
+}
+
+
+.available_boxes
+{
+    position:relative;
+
+    display:flex;
+
+    flex-wrap: wrap;
+
+    gap:20px;
+
+    left:-50px;
+}
+
+
+.available_box1
+{
+    position:relative;
+
+    height:300px;
+
+    width:530px;
+
+    border:2px solid black;
+
+    left:300px;
+
+    top:117px;
+
+}
+
+.available_box1 h4
+{
+    position:relative;
+
+    left:12px;
+
+    top:11px;
+}
+
+.para1
+{
+    position:relative;
+
+    left:263px;
+
+    top:-11px;
+
+    width:68px;
+
+    height:25px;
+
+    border:2px solid black;
+
+    border-radius:11px;
+}
+
+.para1 p
+{
+    position:absolute;
+
+    left:6px;
+}
+
+
+.active_1 
+{
+position:relative;
+
+    left:372px;
+
+    top:-35px;
+
+    width:121px;
+
+    height:25px;
+
+    border:2px solid black;
+
+    border-radius:11px;
+    display: flex;
+
+}
+
+.active_1 p
+{
+    position:absolute;
+
+    left:35px;
+}
+
+.uil-exclamation-circle
+{
+    position:absolute;
+
+    left:10px;
+}
