@@ -173,8 +173,8 @@ body {
 
 /*---------------- Welcome Box ----------------*/
 .welcome-box {
-  background-color: #ffffff;
-  
+  background-color: #2155ff;
+  color: white;
   padding: 25px 30px;
   margin-top: 20px;
   border-radius: 10px;
@@ -182,7 +182,6 @@ body {
   position: relative;
   left: 240px;
   top: 20px;
-  height: 75px;
 }
 
 .export-btn {
@@ -197,7 +196,7 @@ body {
       top: -27px;
     }
 
-.card-container_1{
+.card-container{
     height: 410px;
     width: 1300px;
     position: relative;
@@ -206,7 +205,7 @@ body {
     top: 10px;
 }
 
-.card_1 {
+.job-card_1 {
       background: rgb(242, 252, 250);
      
       border-radius: 10px;
@@ -226,14 +225,14 @@ body {
 
     
 
- .card_1 h3 {
+ .job-card_1 h3 {
       margin: 0;
        position: relative;
       top: -4px;
       
     }
 
-     .card_1 p {
+     .job-card_1 p {
       font-size: 14px;
       color: #666;
       margin: 8px 0;
@@ -241,7 +240,7 @@ body {
       top: 13px;
     }
 
-    .card_1 .badge {
+    .job-card_1 .badge {
       position: relative;
       top: 20px;
       right: 20px;
@@ -254,21 +253,21 @@ body {
       width: 96px;
     }
 
-    .card_1 .company {
+    .job-card_1 .company {
       color: gray;
       margin: 5px 0;
       position: relative;
       top: 10px;
     }
 
-   .card_1 .details {
+   .job-details .details {
       font-size: 14px;
       color: #333;
       position: relative;
       top: -25px;
     }
 
-    .details_1 {
+    .job-details_1 {
       display: grid;
       flex-wrap: wrap;
       gap: 5px;
@@ -280,7 +279,7 @@ body {
     }
     
 
-    .details_2 {
+    .job-details_2 {
       display: grid;
       flex-wrap: wrap;
       gap: 10px;
@@ -292,38 +291,8 @@ body {
       width: 145px;
     }
 
-    .progress-bar {
-      background: #eee;
-      border-radius: 6px;
-      height: 8px;
-      margin: 10px 0;
-      position: relative;
-      top: -19px;
-    }
 
-    .progress-fill {
-      height: 8px;
-      background: #007bff;
-      border-radius: 6px;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin: 10px 0;
-      position: relative;
-      top: 17px;
-    }
-
-    .skill {
-      background: #e9ecef;
-      padding: 5px 10px;
-      border-radius: 12px;
-      font-size: 12px;
-    }
-
-    .view-btn_1 {
+    .view-btn {
       display: block;
       width: 100%;
       padding: 8px;
@@ -338,44 +307,47 @@ body {
       top: 42px;
     }
 
-    .view-btn_1:hover {
+    .view-btn:hover {
       background: #007bff;
       color: white;
     }
 
-    .card_2 {
+    .job-card_2 {
       background: rgb(242, 252, 250);
      
       border-radius: 10px;
-    
+     
       padding: 20px;
       width: 458px;
       height: 468px;
      
       position: relative;
-      top: -429px;
-      left: 555px;
+      top: -428px;
+      left: 558px;
+      
       box-shadow: 0 8px 32px rgba(5, 12, 107, 0.25);
       backdrop-filter: blur(50px);
 
     }
 
-     .card_2 h3 {
+    
+
+ .job-card_2 h3 {
       margin: 0;
        position: relative;
-      top: -5px;
+      top: -4px;
       
     }
 
-     .card_2 p {
+     .job-card_2 p {
       font-size: 14px;
       color: #666;
       margin: 8px 0;
       position: relative;
-      top: 16px;
+      top: 13px;
     }
 
-    .card_2 .badge {
+    .job-card_2 .badge {
       position: relative;
       top: 20px;
       right: 20px;
@@ -388,60 +360,9 @@ body {
       width: 96px;
     }
 
-    .card_2 .company {
+    .job-card_2 .company {
       color: gray;
       margin: 5px 0;
       position: relative;
       top: 10px;
-    }
-
-   .card_2 .details {
-      font-size: 14px;
-      color: #333;
-      position: relative;
-      top: -3px;
-    }
-
-    .view-btn_2 {
-      display: block;
-      width: 100%;
-      padding: 8px;
-      text-align: center;
-      border: 1px solid #007bff;
-      color: #007bff;
-      background: white;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-      position: relative;
-      top: 66px;
-    }
-
-    .view-btn_2:hover {
-      background: #007bff;
-      color: white;
-    }
-
-    .skills_1 {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin: 10px 0;
-      position: relative;
-      top: 36px;
-    }
-
-     .progress-bar_1 {
-      background: #eee;
-      border-radius: 6px;
-      height: 8px;
-      margin: 10px 0;
-      position: relative;
-      top: 2px;
-    }
-
-    .progress-fill_1 {
-      height: 8px;
-      background: #007bff;
-      border-radius: 6px;
     }
