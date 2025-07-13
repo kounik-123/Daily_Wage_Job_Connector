@@ -181,11 +181,12 @@ body {
   width: 1670px;
   position: relative;
   left: 240px;
-  top: 20px;
+  top: 12px;
 }
 
 .export-btn {
-      background-color: white;
+        background-color: #1f3de4;
+        color: white;
       border: 1px solid #ccc;
       padding: 10px 16px;
       border-radius: 6px;
@@ -203,7 +204,7 @@ body {
    }
 
    .export-btn:hover{
-    background-color: #1f3de4;
+    background-color: #209e07;
   color: #ffffff;
    }
 
@@ -213,7 +214,7 @@ body {
     position: relative;
     left: 240px;
     
-    top: 10px;
+    top: -5px;
 }
 
 .job-card_1 {
@@ -410,4 +411,116 @@ body {
       padding: 5px 10px;
       border-radius: 12px;
       font-size: 12px;
+    }
+
+
+    .job-card_3 {
+      background: rgb(242, 252, 250);
+     
+      border-radius: 10px;
+     
+      padding: 20px;
+      width: 458px;
+      height: 382px;
+     
+      position: relative;
+      top: -723px;
+      left: 1100px;
+      
+      box-shadow: 0 8px 32px rgba(5, 12, 107, 0.25);
+      backdrop-filter: blur(50px);
+
+    }
+
+    
+
+ .job-card_3 h3 {
+      margin: 0;
+       position: relative;
+      top: 19px;
+      font-size: 18px;
+    }
+
+     .job-card_3 p {
+      font-size: 15px;
+      color: #666;
+      margin: 8px 0;
+      position: relative;
+      top: 37px;
+    }
+
+    .job-card_3 .badge {
+      position: relative;
+      top: 20px;
+      right: 20px;
+      background: #e0f3ff;
+      color: #007bff;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      left: 298px;
+      width: 96px;
+    }
+
+    .job-card_3 .company {
+      color: gray;
+      margin: 5px 0;
+      position: relative;
+      top: 10px;
+    }
+
+
+    .job-card_4 {
+      background: rgb(242, 252, 250);
+     
+      border-radius: 10px;
+     
+      padding: 20px;
+      width: 458px;
+      height: 382px;
+     
+      position: relative;
+      top: -700px;
+      left: 15px;
+      
+      box-shadow: 0 8px 32px rgba(5, 12, 107, 0.25);
+      backdrop-filter: blur(50px);
+
+    }
+
+    
+
+ .job-card_4 h3 {
+      margin: 0;
+       position: relative;
+      top: 19px;
+      font-size: 18px;
+    }
+
+     .job-card_4 p {
+      font-size: 15px;
+      color: #666;
+      margin: 8px 0;
+      position: relative;
+      top: 37px;
+    }
+
+    .job-card_4 .badge {
+      position: relative;
+      top: 20px;
+      right: 20px;
+      background: #e0f3ff;
+      color: #007bff;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      left: 298px;
+      width: 96px;
+    }
+
+    .job-card_4 .company {
+      color: gray;
+      margin: 5px 0;
+      position: relative;
+      top: 10px;
     }
