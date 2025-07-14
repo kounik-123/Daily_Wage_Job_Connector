@@ -10,15 +10,15 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f4f4f4;
+  background: hsl(174, 100%, 96%);
 }
 
 /*---------------- Sidebar ----------------*/
 .sidebar {
   width: 230px;
   height: 100vh;
-  background-color: #fff;
-  border-right: 1px solid #ddd;
+   background: hsl(174, 100%, 96%);
+  border-right: 2px solid #a3a1a1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -80,13 +80,13 @@ body {
 }
 
 .menu-item:hover {
-  background-color: #f1f3ff;
-  color: #3f51b5;
+  background-color: #c4c2f7;
+  color: #000000;
 }
 
 .menu-item.active {
-  background-color: #e1eaff;
-  color: #3f51b5;
+  background-color: #4759fc;
+  color: #ffffff;
 }
 
 .bottom-section {
@@ -114,14 +114,14 @@ body {
   left: 240px;
   top: 10px;
   border-radius: 10px;
-  background-color: rgb(217, 247, 255);
+  background-color: rgb(168, 172, 233);
     
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 
 }
 
 .topbar h2 {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
   color: #333;
 }
@@ -168,25 +168,26 @@ body {
 
 .user-info .email {
   font-size: 12px;
-  color: #666;
+  color: #413f3f;
 }
 
 /*---------------- Welcome Box ----------------*/
 .welcome-box {
-  background-color: #ffffff;
-  
+  background-color: #436df7;
+  color: white;
   padding: 25px 30px;
   margin-top: 20px;
   border-radius: 10px;
+  font-size: 20px;
   width: 1670px;
+  height: 75px;
   position: relative;
   left: 240px;
   top: 20px;
-  height: 75px;
 }
 
 .export-btn {
-      background-color: rgb(75, 113, 238);
+      background-color: rgb(10, 39, 134);
       color: #ffffff;
       border: 1px solid #ccc;
       padding: 10px 16px;
@@ -196,11 +197,12 @@ body {
       position: relative;
       left: 1440px;
       top: -35px;
+      font-size: 15px;
     }
 
     .export-btn:hover{
-    background-color: #195c08;
-  color: #ffffff;
+    background-color: #4fd82d;
+  color: #000000;
    }
 
 
@@ -214,7 +216,7 @@ body {
 }
 
 .card_1 {
-      background: rgb(242, 252, 250);
+      background: rgb(255, 255, 255);
      
       border-radius: 10px;
      
@@ -336,8 +338,8 @@ body {
       padding: 8px;
       text-align: center;
       border: 1px solid #007bff;
-      color: #007bff;
-      background: white;
+      color: #ffffff;
+      background: rgb(4, 13, 134);
       border-radius: 6px;
       cursor: pointer;
       margin-top: 10px;
@@ -346,12 +348,12 @@ body {
     }
 
     .view-btn_1:hover {
-      background: #007bff;
+      background: #ffb056;
       color: white;
     }
 
     .card_2 {
-      background: rgb(242, 252, 250);
+      background: rgb(255, 255, 255);
      
       border-radius: 10px;
     
@@ -410,7 +412,7 @@ body {
     }
 
     .card_3 {
-      background: rgb(242, 252, 250);
+      background: rgb(255, 255, 255);
      
       border-radius: 10px;
     
