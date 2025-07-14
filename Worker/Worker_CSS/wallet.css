@@ -80,13 +80,13 @@ body {
 }
 
 .menu-item:hover {
-  background-color: #f1f3ff;
-  color: #3f51b5;
+  background-color: #c4c2f7;
+  color: #000000;
 }
 
 .menu-item.active {
-  background-color: #e1eaff;
-  color: #3f51b5;
+  background-color: #4759fc;
+  color: #ffffff;
 }
 
 .bottom-section {
@@ -187,7 +187,7 @@ body {
 }
 
 .export-btn_1 {
-      background-color: #1f3de4;
+      background-color: #001483;
       color: white;
       border: 1px solid #ccc;
       padding: 10px 16px;
@@ -211,7 +211,7 @@ body {
    }
 
    .export-btn_2 {
-      background-color: rgb(58, 143, 19);
+      background-color: rgb(37, 107, 4);
       color: white;
       border: 1px solid #ccc;
       padding: 10px 16px;

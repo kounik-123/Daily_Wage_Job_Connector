@@ -80,13 +80,13 @@ body {
 }
 
 .menu-item:hover {
-  background-color: #f1f3ff;
-  color: #3f51b5;
+  background-color: #c4c2f7;
+  color: #000000;
 }
 
 .menu-item.active {
-  background-color: #e1eaff;
-  color: #3f51b5;
+  background-color: #4759fc;
+  color: #ffffff;
 }
 
 .bottom-section {
@@ -339,7 +339,7 @@ body {
       text-align: center;
       border: 1px solid #007bff;
       color: #ffffff;
-      background: rgb(51, 141, 243);
+      background: rgb(4, 13, 134);
       border-radius: 6px;
       cursor: pointer;
       margin-top: 10px;
