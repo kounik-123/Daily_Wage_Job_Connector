@@ -16,6 +16,9 @@
   <!-- Animate CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
+   <!-- AOS CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="./src/output.css"></script>
@@ -58,6 +61,29 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+     /* Customize initial transform distance for fade-left and fade-right */
+    [data-aos="fade-left"] {
+      transform: translateX(-200px);
+      opacity: 0;
+      transition-property: transform, opacity;
+    }
+
+    [data-aos="fade-right"] 
+    {
+      transform: translateX(200px);
+      opacity: 0;
+      transition-property: transform, opacity;
+    }
+
+    [data-aos].aos-animate {
+      transform: translateX(0) !important;
+      opacity: 1 !important;
+    }
+
+
+
+
   </style>
 
 
@@ -261,7 +287,7 @@
           <!-- Cards 1–3 -->
           <div class="testimonial-card">
             <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
-              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <img src="images/person 1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -275,7 +301,7 @@
           </div>
           <div class="testimonial-card">
             <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
-              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <img src="images/person 2.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -289,7 +315,7 @@
           </div>
           <div class="testimonial-card">
             <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
-              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <img src="images/person 3.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -307,7 +333,7 @@
           <!-- Cards 1–3 duplicated -->
           <div class="testimonial-card">
             <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
-              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <img src="images/person 4.jpeg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -321,7 +347,7 @@
           </div>
           <div class="testimonial-card">
             <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
-              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <img src="images/person 5.jpeg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -335,7 +361,7 @@
           </div>
           <div class="testimonial-card">
             <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
-              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <img src="images/person 1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -358,7 +384,7 @@
           <!-- Cards 4–6 -->
           <div class="testimonial-card">
             <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
-              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <img src="images/person 2.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -372,7 +398,7 @@
           </div>
           <div class="testimonial-card">
             <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
-              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <img src="images/person 3.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -386,7 +412,7 @@
           </div>
           <div class="testimonial-card">
             <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
-              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <img src="images/person 4.jepg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
@@ -450,7 +476,7 @@
 
 
   <!-- READY TO FLOW SECTION -->
-  <section class="py-20 px-4 max-w-7xl mx-auto">
+  <section class="py-20 px-4 max-w-7xl mx-auto"data-aos="fade-left">
     <div
       class="bg-white bg-opacity-10 p-10 rounded-2xl shadow-xl text-center animate__animated animate__zoomIn animate__fast">
       <h2 class="text-3xl font-bold text-yellow-100">Ready to Transform Your Workflow?</h2>
@@ -733,6 +759,14 @@
   observer.observe(document.getElementById('why-nexus'));
 </script>
 
+<!-- AOS JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 
 </body>
 
