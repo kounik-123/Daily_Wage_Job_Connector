@@ -1,534 +1,739 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wage Project</title>
+  <title>NexusFlow - Wage Project</title>
 
-  <!-- Iconsout CDN -->
+  <!-- Unicons & Font Awesome -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/monochrome.css">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <!-- Swiper JS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./CSS/wage_features.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Animate CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./src/output.css"></script>
+
+
+  <style>
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes scroll-right {
+      0% {
+        transform: translateX(-50%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .scroll-left {
+      animation: scroll-left 30s linear infinite;
+    }
+
+    .scroll-right {
+      animation: scroll-right 30s linear infinite;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+
 </head>
 
-<body>
+
+
+<body
+  class="bg-gradient-to-br from-[#0a0a23] via-[#1a1440] via-60% to-[#c42db3] min-h-screen text-white font-[Montserrat]">
 
   <!-- NAVBAR -->
-  <nav>
-    <div class="container nav_container">
-      <div class="company_logo_name">
-        <div class="logo">
+  <nav class="fixed top-0 w-full z-50 h-20 backdrop-blur bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-full">
+      <div class="flex items-center space-x-4">
+        <div class="bg-blue-600 w-12 h-12 rounded-xl flex justify-center items-center text-white text-2xl">
           <i class="uil uil-bolt-alt"></i>
         </div>
-        <div class="name">
-          <a href="wage_features.html"><h2>NexusFlow</h2></a>
-        </div>
+        <a href="wage_features.html"
+          class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-indigo-500">NexusFlow</a>
       </div>
-
-      <!-- <div class="other_elements"> -->
-        <ul class="nav_menu">
+      <div class="flex items-center space-x-8">
+        <ul class="hidden md:flex space-x-8 text-white font-semibold">
           <li><a href="index6.html">Features</a></li>
           <li><a href="about_1.html">About</a></li>
           <li><a href="review.html">Review</a></li>
           <li><a href="review.html">Contact</a></li>
         </ul>
-
-        <div class="button">
-          <button id="log_in">Log In</button>
-          <button id="sign_up">Sign Up</button>
+        <div class="flex space-x-4">
+          <button class="bg-blue-600 px-5 py-2 rounded-lg shadow-md font-bold">Log In</button>
+          <button class="bg-blue-600 px-5 py-2 rounded-lg shadow-md font-bold">Sign Up</button>
         </div>
-      <!-- </div> -->
+      </div>
     </div>
   </nav>
 
-  <!-- HEADER SECTION -->
-  <header >
-    <div class="container header_container">
-      
-      <!-- LEFT CONTENT -->
-      <div class="header_left wow animate__animated animate__bounceInDown animate__slow">
-
-        <div class="header_left_1">
-          <h2><span class="blink_dot"></span>Now Live - Advanced Analytics Dashboard</h2>
-        </div>
-
-        <h1 class="scramble"></h1>
-
-        <p class="para">
-          Streamline your operations with our cutting-edge platform.
-          Join over 50,000+ professionals who trust NexusFlow for their daily workflow management.
-          Automate tasks, manage wages, and track employee time with precision.
-        </p>
-
-        <div class="get_started_demo ">
-          <div class="get_started">
-            <h3 class="started">Get Started Free</h3>
-            <i class="uil uil-arrow-right"></i>
-          </div>
-          <div class="demo">
-            <i class="uil uil-play"></i>
-            <h3 class="demo_write">Watch Demo</h3>
-          </div>
-        </div>
-
-        <div class="users">
-          <div class="circle">
-            <div class="circle1"></div>
-            <div class="circle2"></div>
-            <div class="circle3"></div>
-          </div>
-
-          <div class="para_users">50,000+ users</div>
-
-          <div class="star">
-            <div class="five_star">
-              <div class="star1"><i class="uis uis-favorite"></i></div>
-              <div class="star2"><i class="uis uis-favorite"></i></div>
-              <div class="star3"><i class="uis uis-favorite"></i></div>
-              <div class="star4">
-                <i class="uis uis-favorite gray-star"></i>
-                <i class="uis uis-favorite gold-star"></i>
-              </div>
-              <div class="star5"><i class="uis uis-favorite"></i></div>
-              <div class="rating">
-                <p>4.5/5 rating</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
+  <!-- HEADER -->
+  <header class="pt-32 pb-20 px-4 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div class="animate__animated animate__bounceInDown animate__slow">
+      <div class="border border-violet-400 rounded-lg px-6 py-2 mb-4 inline-block">
+        <h2 class="text-sm flex items-center gap-2"><span
+            class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>Now Live - Advanced Analytics Dashboard</h2>
       </div>
+      <h1 id="scramble"
+        class=" pt-[5vh] scramble flex flex-wrap justify-center items-center gap-2 text-3xl md:text-4xl font-bold text-center h-[34.44vh] overflow-hidden">
+      </h1>
 
-      <!-- RIGHT IMAGE -->
-      <div class="header_right wow animate__animated animate__zoomIn animate__slow ">
-        <div class="header_right-image">
-          <img src="images/Worker 5.png" alt="Dashboard Graphic">
+
+      <p class="text-gray-200 mb-6 pt-[5vh] h-[14vh]">
+        Join over <span class="text-yellow-400 font-bold">50,000+</span> professionals. Automate tasks, manage wages,
+        and track employee time with precision.
+      </p>
+      <div class="flex gap-6 mb-6 h-[8vh]">
+        <button
+          class="bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
+          Get Started Free <i class="uil uil-arrow-right"></i>
+        </button>
+        <button class="border border-white px-6 py-3 rounded-xl flex items-center gap-2">
+          <i class="uil uil-play text-blue-500"></i> Watch Demo
+        </button>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex -space-x-2">
+          <div class="w-5 h-5 bg-blue-500 rounded-full border-2 border-white"></div>
+          <div class="w-5 h-5 bg-purple-500 rounded-full border-2 border-white"></div>
+          <div class="w-5 h-5 bg-green-400 rounded-full border-2 border-white"></div>
+        </div>
+        <p class="text-sm text-yellow-100">50,000+ users</p>
+        <div class="flex items-center gap-1 ml-4 text-yellow-400">
+          <i class="uis uis-favorite"></i>
+          <i class="uis uis-favorite"></i>
+          <i class="uis uis-favorite"></i>
+          <i class="uis uis-favorite gray-star"></i>
+          <i class="uis uis-favorite gold-star"></i>
+          <span class="ml-2 text-white text-sm">4.5/5 rating</span>
         </div>
       </div>
-
+    </div>
+    <div class="animate__animated animate__zoomIn animate__slow">
+      <img src="images/Worker 5.png" alt="Dashboard Graphic" class="w-full max-w-xl mx-auto">
     </div>
   </header>
 
-         
 
-    <!--===================================== END OF HEADER ===============================-->
+  <!-- <section class="py-20 px-4 max-w-7xl mx-auto wow animate__animated animate__fadeInRightBig animate__slow"> -->
 
-
-      <section class="choose_section">
-
-  
+    <!-- <section id="why-nexus"
+  class="opacity-0 translate-y-10 transition-all duration-700 ease-out py-20 px-4 max-w-7xl mx-auto"> -->
+  <section id="why-nexus" class="relative py-20 px-4 max-w-7xl mx-auto min-h-[100vh] overflow-hidden">
+    <!-- Adjust min-h-[800px] as needed -->
+    <div id="why-nexus-content"
+      class="absolute inset-0 opacity-0 translate-x-full transition-all duration-700 ease-in-out">
     
-
-              
-                         <div class="box_background  choose_container wow animate__animated animate__fadeInRightBig animate__slow" data-wow-delay="0.6s">
-                            <div class="choose_content">
-
-                                      <h2>Why Choose <span class="nexus">NexusFlow</span></h2>
-
-                                      <p>Discover the powerful features that make NexusFlow the preferred choice for modern teams</p>
-
-
-                            </div>
-                         
-                            <div class="boxes">
-
-
-
-                              <div class="box1">
-                                <div class="globe_icon"><i class="uil uil-globe"></i></div>
-                                <h4>Global Reach</h4>
-                                <p>
-                                  Connect With Opportunites Worldwide Through Our Extensive Network
-                                </p>
-
-                              </div>
-
-                              <div class="box1">
-                                <div class="globe_icon"><i class="uil uil-shield"></i></div>
-                                <h4>Secure Platform</h4>
-                                <p>
-                                 Enterprise-grade security protecting your data and transaction
-                                </p>
-
-                              </div>
-
-
-                              <div class="box1">
-                                <div class="globe_icon"><i class="uil uil-bolt-alt"></i></div>
-                                <h4>Lightning Fast</h4>
-                                <p>
-                                  Optimized Perfromance Delivering Results In Milliseconds
-                                </p>
-
-                              </div>
-
-                               
-                           </div>
-
-
-                           <div class="boxes_choose">
-                            <div class="box2">
-                                <div class="globe_icon_2"><i class="uil uil-phone-alt"></i></div>
-                                <h4>24/7 Customer Support</h4>
-                                <p>
-                                We’re here whenever you need us. Our support team is available round the clock to assist you with queries or issues.
-                                </p>
-
-                              </div>
-
-                               <div class="box2">
-                                <div class="globe_icon_2"><i class="uil uil-padlock"></i></div>
-                                <h4>Safe & Secure Transactions</h4>
-                                <p>
-                                Your payments and data are safe with our secure platform, offering multiple payment options and encryption.
-                                </p>
-
-                              </div>
-
-                               <div class="box2">
-                                <div class="globe_icon_2"><i class="fas fa-coins"></i></div>
-                                <h4> Affordable Pricing</h4>
-                                <p>
-                                High-quality service doesn’t have to break the bank. We offer competitive pricing with no hidden fees.                                </p>
-
-                              </div>
-                           </div>
-                        </div>   
-
-              
-
-</section>
-
-
-<!--=========================================End Of Choose Category=======================-->
-
-
-<section class="stat ">
-
-    <div class="stats-section  wow animate__animated animate__fadeInLeftBig animate__slow ">
-    <div class="stat-box">
-      <h2><span class="counter" data-target="50000" data-suffix="k+"></span></h2>
-      <p>Users</p>
-    </div>
-    <div class="stat-box">
-      <h2><span class="counter" data-target="99" data-suffix="%"></span></h2>
-      <p>Uptime</p>
-    </div>
-    <div class="stat-box">
-      <h2><span class="counter" data-target="150" data-suffix="+"></span></h2>
-      <p>Clients</p>
-    </div>
-    <div class="stat-box">
-      <h2><span class="counter" data-target="24" data-suffix="/7"></span></h2>
-      <p>Support</p>
-    </div>
-    </div>
   
   
+
+    <!-- <section id="features-section" class="py-20 px-4 max-w-7xl mx-auto opacity-0"> -->
+
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-yellow-100">Why Choose <span
+          class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-indigo-500">NexusFlow</span></h2>
+      <p class="text-gray-300 mt-4">Discover the powerful features that make NexusFlow the preferred choice for modern
+        teams</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
+        <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
+          <i class="uil uil-globe"></i>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-2">Global Reach</h4>
+        <p class="text-yellow-100">Connect With Opportunities Worldwide Through Our Extensive Network</p>
+      </div>
+      <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
+        <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
+          <i class="uil uil-shield"></i>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-2">Secure Platform</h4>
+        <p class="text-yellow-100">Enterprise-grade security protecting your data and transactions</p>
+      </div>
+      <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
+        <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
+          <i class="uil uil-bolt-alt"></i>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-2">Lightning Fast</h4>
+        <p class="text-yellow-100">Optimized performance delivering results in milliseconds</p>
+      </div>
+
+      <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
+        <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
+          <i class="uil uil-bolt-alt"></i>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-2">Lightning Fast</h4>
+        <p class="text-yellow-100">Optimized performance delivering results in milliseconds</p>
+      </div>
+
+
+      <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
+        <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
+          <i class="uil uil-bolt-alt"></i>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-2">Lightning Fast</h4>
+        <p class="text-yellow-100">Optimized performance delivering results in milliseconds</p>
+      </div>
+
+
+      <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
+        <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
+          <i class="uil uil-bolt-alt"></i>
+        </div>
+        <h4 class="text-xl font-semibold text-white mb-2">Lightning Fast</h4>
+        <p class="text-yellow-100">Optimized performance delivering results in milliseconds</p>
+      </div>
+
+
+
+
+
+
+
+    </div>
   </section>
 
-<!--=============================================   End Of Counting  =============================-->
+  <!-- More sections like CHOOSE, STAT, TESTIMONIAL, READY, FOOTER go here -->
 
-
-<section class="testimonial-section" id="testimonials">
-  <div class="testimonial-title">
-    <h2>What Our Customers Say</h2>
-    <p>Join Thousands Of Satisfied Customers Worldwide</p>
-  </div>
-
-  <div class="testimonial-wrapper">
-
-    <!-- Row 1 -->
-    <div class="testimonial-row wow animate__animated animate__bounceInUp animate__slow">
-      <div class="testimonial-track scroll-left" id="testimonial-track-1">
-        <div class="testimonial-card">
-          <div class="testimonial-image"><img src="images/person 1.jpg" alt="Amit Sharma"></div>
-          <h3>Amit Sharma <i class="fas fa-quote-right"></i></h3>
-           <div class="testimonial-stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
+  <!-- STATS SECTION -->
+  <section class="py-20 px-4 max-w-7xl mx-auto animate__animated animate__fadeInLeftBig animate__slow">
+    <div class="flex flex-wrap justify-center gap-16 bg-white bg-opacity-10 p-10 rounded-2xl backdrop-blur">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold text-white"><span class="counter" data-target="50000" data-suffix="k+">50k+</span>
+        </h2>
+        <p class="text-blue-100">Users</p>
       </div>
-          <p class="testimonial-profession">Software Engineer</p>
-          <p class="testimonial-review">“Wage Project made salary tracking incredibly easy. Clean UI and full transparency!”</p>
+      <div class="text-center">
+        <h2 class="text-4xl font-bold text-white"><span class="counter" data-target="99" data-suffix="%">99%</span></h2>
+        <p class="text-blue-100">Uptime</p>
+      </div>
+      <div class="text-center">
+        <h2 class="text-4xl font-bold text-white"><span class="counter" data-target="150" data-suffix="+">150+</span>
+        </h2>
+        <p class="text-blue-100">Clients</p>
+      </div>
+      <div class="text-center">
+        <h2 class="text-4xl font-bold text-white"><span class="counter" data-target="24" data-suffix="/7">24/7</span>
+        </h2>
+        <p class="text-blue-100">Support</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL SECTION -->
+  <!-- TESTIMONIAL SECTION -->
+  <section class="py-20 px-4 max-w-7xl mx-auto" id="testimonials">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-yellow-100">What Our Customers Say</h2>
+      <p class="text-gray-300 mt-2">Join Thousands Of Satisfied Customers Worldwide</p>
+    </div>
+
+    <!-- Row 1: Left → Right -->
+    <div class="overflow-hidden w-full no-scrollbar mb-10">
+      <div class="flex w-max gap-6 scroll-left">
+        <div class="flex gap-6">
+          <!-- Cards 1–3 -->
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+
+          </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-image"><img src="images/person 2.jpg" alt="Priya Desai"></div>
-          <h3>Priya Desai <i class="fas fa-quote-right"></i></h3>
-          <div class="testimonial-stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-      </div>
-          <p class="testimonial-profession">Marketing Manager</p>
-          <p class="testimonial-review">“Managing freelance payments is now effortless. A must-have for remote workers.”</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-image"><img src="images/person 3.jpg" alt="Rahul Mehta"></div>
-          <h3>Rahul Mehta <i class="fas fa-quote-right"></i></h3>
-          <div class="testimonial-stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
-        <i class="far fa-star"></i>
-      </div>
-          <p class="testimonial-profession">Construction Worker</p>
-          <p class="testimonial-review">“Now I know exactly when and where I worked. Simple, helpful, and effective.”</p>
+        <div class="flex gap-6">
+          <!-- Cards 1–3 duplicated -->
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Row 2 -->
-    <div class="testimonial-row wow animate__animated animate__bounceInUp animate__slow">
-      <div class="testimonial-track scroll-right" id="testimonial-track-2">
-        <div class="testimonial-card">
-          <div class="testimonial-image"><img src="images/person 4.jpeg" alt="Sneha Roy"></div>
-          <h3>Sneha Roy <i class="fas fa-quote-right"></i></h3>
-          <div class="testimonial-stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
-        <i class="far fa-star"></i>
-      </div>
-          <p class="testimonial-profession">Graphic Designer</p>
-          <p class="testimonial-review">“Found reliable clients and tracked payments easily. Great for creatives like me!”</p>
+    <!-- Row 2: Right → Left -->
+    <div class="overflow-hidden w-full no-scrollbar">
+      <div class="flex w-max gap-6 scroll-right">
+        <div class="flex gap-6">
+          <!-- Cards 4–6 -->
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-image"><img src="images/person 5.jpeg" alt="Vikram Singh"></div>
-          <h3>Vikram Singh <i class="fas fa-quote-right"></i></h3>
-          <div class="testimonial-stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
-      </div>
-          <p class="testimonial-profession">Delivery Executive</p>
-          <p class="testimonial-review">“Keeps my job records organized. Helps me understand my work patterns well.”</p>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-image"><img src="images/person 2.jpg" alt="Priya Desai"></div>
-          <h3>Priya Desai <i class="fas fa-quote-right"></i></h3>
-          <div class="testimonial-stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-      </div>
-          <p class="testimonial-profession">Marketing Manager</p>
-          <p class="testimonial-review">“Managing freelance payments is now effortless. A must-have for remote workers.”</p>
+        <div class="flex gap-6">
+          <!-- Cards 4–6 duplicated -->
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
+          <div class="testimonial-card">
+            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+              <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
+              <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
+              <div class="flex justify-center text-yellow-400 text-xs mt-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="text-[10px] text-center text-gray-600">Software Engineer</p>
+              <p class="mt-2 text-[11px] text-center italic">“Wage Project made tracking super easy. Clean UI and full
+                transparency!”</p>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
-
-  </div>
-</section>
-
-<!--=============================================   End Of Testimonials  =============================-->
+  </section>
 
 
-<section>
-
-        <div class="ready_to_flow_box wow animate__animated animate__zoomIn animate__fast" data-wow-delay="0.3s">
-
- <div class="ready_to_flow">
-
-            <h2> Ready to TransformYour Workflow ?</h2>
-
-
-            <p>Join Thousnds Of Professionals who have already revolutionized their productivity 
-              with NexusFlow
-            </p>
-
-</div>
-
-<div class="get_started_demo1">
-          <div class="get_started_1">
-            <h3 class="started_1">Start Free Trial</h3>
-            <i id="right1" class="uil uil-arrow-right"></i>
-          </div>
-          <div class="demo_1">
-            <i id="play1" class="uil uil-play"></i>
-            <h3 class="demo_write_1">Schedule Demo</h3>
-          </div>
-</div>
-
-</div>
-
-
-</section>
-
-
-<!--======================================== End Of Ready Section==============================-->
-
- <footer class="footer">
-
-      <div class="container footer_container">
-
-        <div class="footer_1">
-
-          <div class="logo_1">
-          <div class="logo_1_2"><i class="uil uil-bolt-alt"></i></div>
-        </div>
-        <div class="name_1">
-          <a href="wage_features.html"><h2>NexusFlow</h2></a>
-        </div>
-
-        <p>Transforming workflows for modern teams worldwide</p>
-         
-
-          </div>
-
-
-
-
-          <div class="footer_2">
-                  
-            <h2>Permalinks</h2>
-             <ul class="permalinks">
-             <li><a href="index6.html">Features</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="courses.html">Review</a></li>
-          <li><a href="contact.html">Contact</a></li>
-
-            </ul>
-
-          </div>
-
-          <div class="footer_3">
-           <h2>Privacy</h2>
-
-           <ul class="privacy">
-
-            <li><a href="#">Privacy Policy</a></li>
-
-            <li><a href="#">Terms & Conditions</a></li>
-
-            <li><a href="#">Refund Policy</a></li>
-            
-
-            </ul>
-         </div>
-
-
-         <div class="footer_4">
-               <h2>
-                Contact Us
-               </h2>
-
-               <div>
-                <p>+91 8910893178 </p>
-                <p>kounikbiswas3010@gmail.com</p>
-                </div>
-
-
-          <ul class="footer_socials">
-
-            <li>
-              <a href="#"><i class="uil uil-facebook-f"></i></a>
-            </li>
-
-            <li>
-              <a href="#"><i class="uil uil-instagram-alt"></i></a>
-            </li>
-
-            <li>
-              <a href="#"><i class="uil uil-twitter"></i></a>
-            </li>
-
-            <li>
-              <a href="#"><i class="uil uil-linkedin-alt"></i></a>
-            </li>
-
-          </ul>
-
-          </div>
-
+  <!-- READY TO FLOW SECTION -->
+  <section class="py-20 px-4 max-w-7xl mx-auto">
+    <div
+      class="bg-white bg-opacity-10 p-10 rounded-2xl shadow-xl text-center animate__animated animate__zoomIn animate__fast">
+      <h2 class="text-3xl font-bold text-yellow-100">Ready to Transform Your Workflow?</h2>
+      <p class="text-gray-200 mt-4 mb-8 max-w-2xl mx-auto">Join Thousands Of Professionals who have already
+        revolutionized their productivity with NexusFlow</p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <button
+          class="bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 text-white">
+          Start Free Trial <i class="uil uil-arrow-right"></i>
+        </button>
+        <button class="border border-white px-6 py-3 rounded-xl flex items-center justify-center gap-2">
+          <i class="uil uil-play text-blue-500"></i> Schedule Demo
+        </button>
+      </div>
     </div>
+  </section>
 
-    <div class="footer_copyright">
-
+  <!-- FOOTER -->
+  <footer class="bg-[#2e3267] py-20 text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center space-x-3 mb-3">
+          <div class="bg-blue-600 w-10 h-10 rounded-lg flex justify-center items-center">
+            <i class="uil uil-bolt-alt text-white"></i>
+          </div>
+          <h2 class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-indigo-500">
+            NexusFlow</h2>
+        </div>
+        <p class="text-gray-300">Transforming workflows for modern teams worldwide</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-4">Permalinks</h4>
+        <ul class="space-y-2">
+          <li><a href="index6.html" class="hover:underline">Features</a></li>
+          <li><a href="about.html" class="hover:underline">About</a></li>
+          <li><a href="courses.html" class="hover:underline">Review</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-4">Privacy</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+          <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+          <li><a href="#" class="hover:underline">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-4">Contact Us</h4>
+        <p class="text-gray-300">+91 8910893178</p>
+        <p class="text-gray-300 mb-4">kounikbiswas3010@gmail.com</p>
+        <div class="flex space-x-4 text-lg">
+          <a href="#" class="hover:text-blue-400"><i class="uil uil-facebook-f"></i></a>
+          <a href="#" class="hover:text-pink-400"><i class="uil uil-instagram-alt"></i></a>
+          <a href="#" class="hover:text-sky-400"><i class="uil uil-twitter"></i></a>
+          <a href="#" class="hover:text-blue-500"><i class="uil uil-linkedin-alt"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-10 text-gray-400 text-xs">
       <small>@2024 NexusFlow. All rights reserved.</small>
-
-   </div>
-
-
-    </footer>
+    </div>
+  </footer>
 
 
-  <!-- SCRIPTS -->
-  <script src="wage_fatures.js"></script>
-
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <!-- Scripts -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script>
     new WOW().init();
   </script>
+  <!-- SCRIPTS -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+    new WOW().init();
+
+    // Optional: Counter animation logic
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const count = +counter.innerText.replace(/[^\\d]/g, '');
+        const increment = target / 100;
+
+        if (count < target) {
+          counter.innerText = `${Math.ceil(count + increment)}${suffix}`;
+          setTimeout(updateCounter, 20);
+        } else {
+          counter.innerText = `${target}${suffix}`;
+        }
+      };
+      updateCounter();
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+    new WOW().init();
+
+    // Dynamic counter on scroll
+    const counters = document.querySelectorAll('.counter');
+    const options = { threshold: 0.5 };
+
+    const animateCounter = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const suffix = counter.getAttribute('data-suffix') || '';
+      let count = 0;
+      const increment = target / 100;
+
+      const update = () => {
+        count += increment;
+        if (count < target) {
+          counter.innerText = `${Math.ceil(count)}${suffix}`;
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = `${target}${suffix}`;
+        }
+      };
+      update();
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  </script>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    const navMenu = document.querySelector('.nav_menu');
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'md:hidden text-white text-3xl';
+    toggleBtn.innerHTML = '<i class="uil uil-bars"></i>';
+
+    document.querySelector('nav > div').prepend(toggleBtn);
+
+    toggleBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+      navMenu.classList.toggle('flex');
+      navMenu.classList.add('flex-col', 'bg-[#0a0a23]', 'absolute', 'top-20', 'left-0', 'w-full', 'text-center', 'py-4');
+    });
+  </script>
 
 
- 
+  <!-- HOMEPAGE ANIMATIONS + INTERACTIONS -->
+  <script>
+    // Sticky navbar background on scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').classList.toggle('window-scroll', window.scrollY > 0);
+    });
+
+    // Scramble effect animation
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@!#$%^&";
+    const messages = [
+      "Track employee work hours efficiently",
+      "Automate attendance and wage calculations",
+      "Generate accurate payroll reports instantly",
+      "Enhance transparency in wage distribution",
+      "Empower HR with real-time insights"
+    ];
+
+    const target = document.querySelector("#scramble");
+    let index = 0;
+    let direction = "left";
+    let isFirstTime = true;
+
+    function scrambleToText(text, direction) {
+      let progress = 0;
+      const words = text.split(" ");
+      let totalLength = 0;
+      const boxes = [];
+
+      target.innerHTML = "";
+      target.classList.remove("animate__animated", "animate__bounceInDown");
+
+      // Build word-by-word
+      words.forEach(word => {
+        const wordSpan = document.createElement("span");
+        wordSpan.classList.add("flex", "gap-1", "mr-3");
+
+        for (let i = 0; i < word.length; i++) {
+          const charBox = document.createElement("div");
+          charBox.classList.add(
+            "w-8", "h-10",
+            "flex", "items-center", "justify-center",
+            "border", "border-gray-700",
+            "text-xl", "font-bold", "text-gray-400",
+            "transition-all", "duration-300"
+          );
+          charBox.textContent = word[i];
+          wordSpan.appendChild(charBox);
+          boxes.push({ box: charBox, char: word[i], index: totalLength });
+          totalLength++;
+        }
+
+        target.appendChild(wordSpan);
+      });
+
+      if (isFirstTime) {
+        setTimeout(() => {
+          target.classList.add("animate__animated", "animate__bounceInDown");
+
+          target.addEventListener("animationend", () => {
+            isFirstTime = false;
+            animateScramble(boxes, direction, totalLength);
+          }, { once: true });
+        }, 50);
+      } else {
+        animateScramble(boxes, direction, totalLength);
+      }
+    }
+
+    function animateScramble(boxes, direction, totalLength) {
+      let progress = 0;
+
+      const interval = setInterval(() => {
+        const current = Math.round(progress);
+
+        boxes.forEach(({ box, char, index }) => {
+          const showFinal = direction === "left"
+            ? index <= current
+            : index >= totalLength - 1 - current;
+
+          if (showFinal) {
+            box.textContent = char;
+            box.classList.add("final");
+            box.classList.remove("text-gray-400", "border-gray-700");
+            box.classList.add("text-purple-400", "border-purple-500");
+          } else {
+            const rand = letters[Math.floor(Math.random() * letters.length)];
+            box.textContent = rand;
+            box.classList.remove("final", "text-purple-400", "border-purple-500");
+            box.classList.add("text-gray-400", "border-gray-700");
+          }
+        });
+
+        progress += 0.3;
+
+        if (progress >= totalLength) {
+          clearInterval(interval);
+          setTimeout(() => {
+            index = (index + 1) % messages.length;
+            direction = direction === "left" ? "right" : "left";
+            scrambleToText(messages[index], direction);
+          }, 2500);
+        }
+      }, 45);
+    }
+
+    // Start the first scramble
+    scrambleToText(messages[index], direction);
+  </script>
 
 <script>
-  function cloneTrackContent(id) {
-    const track = document.getElementById(id);
-    const clone = track.innerHTML;
-    track.innerHTML += clone; // Append duplicate cards for seamless scroll
-  }
+  const content = document.getElementById('why-nexus-content');
 
-  // Clone both testimonial rows
-  cloneTrackContent("testimonial-track-1");
-  cloneTrackContent("testimonial-track-2");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        content.classList.remove('translate-x-full', 'opacity-0');
+        content.classList.add('translate-x-0', 'opacity-100');
+      } else {
+        content.classList.add('translate-x-full', 'opacity-0');
+        content.classList.remove('translate-x-0', 'opacity-100');
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
 
-  // Get both track elements
-  const track1 = document.getElementById("testimonial-track-1");
-  const track2 = document.getElementById("testimonial-track-2");
-
-  // Functions to pause and resume animations
-  function pauseAnimation() {
-    track1.style.animationPlayState = 'paused';
-    track2.style.animationPlayState = 'paused';
-  }
-
-  function resumeAnimation() {
-    track1.style.animationPlayState = 'running';
-    track2.style.animationPlayState = 'running';
-  }
-
-  // Add hover listeners to both
-  track1.addEventListener("mouseenter", pauseAnimation);
-  track2.addEventListener("mouseenter", pauseAnimation);
-  track1.addEventListener("mouseleave", resumeAnimation);
-  track2.addEventListener("mouseleave", resumeAnimation);
+  observer.observe(document.getElementById('why-nexus'));
 </script>
 
 
-
 </body>
+
 </html>
