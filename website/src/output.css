@@ -453,6 +453,9 @@
   .max-w-xl {
     max-width: var(--container-xl);
   }
+  .min-w-\[5ch\] {
+    min-width: 5ch;
+  }
   .shrink-0 {
     flex-shrink: 0;
   }
