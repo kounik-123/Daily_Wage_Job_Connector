@@ -41,8 +41,8 @@
     <div class="text-2xl font-bold text-white mb-8 text-center" x-show="!collapsed">📊 Dashboard</div>
     <div class="text-2xl font-bold text-white mb-8 text-center" x-show="collapsed">📊</div>
 
-    <nav class="flex flex-col gap-4 text-lg relative">
-      <template x-for="item in ['Home', 'Orders', 'Products', 'Settings']" :key="item">
+    <nav class="flex flex-col gap-8 text-lg relative top-12">
+      <template x-for="item in ['Home', 'Available Jobs', 'Active Jobs', 'Past Jobs','Wallet','Search Jobs']" :key="item">
         <div class="relative">
           <!-- Blue Bar -->
           <!-- Blue Bar -->
@@ -63,9 +63,12 @@
   <!-- Icon (faster and glitch-free) -->
   <span x-html="{
     'Home': '🏠',
-    'Orders': '📦',
-    'Products': '🛒',
-    'Settings': '⚙️'
+    'Available Jobs': '📦',
+    'Active Jobs': '⏰',
+    'Past Jobs': '✅',
+    'Wallet':'💳 ',
+     'Search Jobs':'🔍'
+
   }[item]"></span>
 
   <!-- Label -->
