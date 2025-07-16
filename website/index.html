@@ -79,6 +79,48 @@
       transform: translateX(0) !important;
       opacity: 1 !important;
     }
+
+
+
+    /* Styles for the custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      opacity: 0;
+      /* Initially transparent */
+      transition: opacity 0.3s ease;
+      /* Smooth transition effect */
+    }
+
+    /* Show the scrollbar on hover */
+    ::-webkit-scrollbar:hover {
+      opacity: 1;
+      /* Fully visible on hover */
+    }
+
+    /* Track (the background of the scrollbar) */
+    ::-webkit-scrollbar-track {
+      background: #1a1440;
+      /* Dark background color */
+    }
+
+
+    /* Thumb (the draggable part of the scrollbar) */
+    ::-webkit-scrollbar-thumb {
+      background: #4c1d95;
+      /* Color of the scrollbar thumb */
+      border-radius: 5px;
+      /* Rounded corners for the thumb */
+    }
+
+    /* Optional: Hover effect on the thumb */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9333ea;
+
+    }
+
+    ::-webkit-scrollbar-button {
+      display: none;
+    }
   </style>
 
 
@@ -92,25 +134,34 @@
   <!-- NAVBAR -->
   <nav class="fixed top-0 w-full z-50 h-20 backdrop-blur bg-transparent">
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-full">
-      <div class="flex items-center space-x-4">
+      <button id="menu-toggle" class="md:hidden text-3xl focus:outline-none">
+        <i class="uil uil-bars"></i>
+      </button>
+      <div class="flex items-center space-x-2 md:space-x-4">
         <div class="bg-blue-600 w-12 h-12 rounded-xl flex justify-center items-center text-white text-2xl">
           <i class="uil uil-bolt-alt"></i>
         </div>
+
         <a href="wage_features.html"
-          class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-indigo-500">NexusFlow</a>
+          class="md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-indigo-500">NexusFlow</a>
       </div>
-      <div class="flex items-center space-x-8">
-        <ul class="hidden md:flex space-x-8 text-white font-semibold">
+
+      <div>
+        <ul id="menu" class="hidden flex-col gap-4 absolute top-full left-0 w-full bg-[#0a0a23] text-center py-4
+        md:static md:flex md:flex-row md:gap-8 md:bg-transparent md:py-0">
           <li><a href="index6.html">Features</a></li>
           <li><a href="about_1.html">About</a></li>
           <li><a href="review.html">Review</a></li>
           <li><a href="review.html">Contact</a></li>
         </ul>
-        <div class="flex space-x-4">
-          <button class="bg-blue-600 px-5 py-2 rounded-lg shadow-md font-bold">Log In</button>
-          <button class="bg-blue-600 px-5 py-2 rounded-lg shadow-md font-bold">Sign Up</button>
-        </div>
       </div>
+
+
+      <div class="flex space-x-2 md:space-x-4">
+        <button class="bg-blue-600 px-2 md:px-5 py-1 md:py-2 rounded-lg shadow-md md:font-bold">Log In</button>
+        <button class="bg-blue-600 px-2 md:px-5 py-1 md:py-2 rounded-lg shadow-md md:font-bold">Sign Up</button>
+      </div>
+
     </div>
   </nav>
 
@@ -122,7 +173,7 @@
             class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>Now Live - Advanced Analytics Dashboard</h2>
       </div>
       <h1 id="scramble"
-        class=" pt-[5vh] scramble flex flex-wrap justify-center items-center gap-2 text-3xl md:text-4xl font-bold text-center h-[34.44vh] overflow-hidden">
+        class="pt-[5vh] scramble flex flex-wrap justify-center items-center gap-1 md:gap-2 text-3xl md:text-4xl font-bold text-center min-h-[35vh] md:h-[34.44vh] overflow-hidden">
       </h1>
 
 
@@ -130,12 +181,12 @@
         Join over <span class="text-yellow-400 font-bold">50,000+</span> professionals. Automate tasks, manage wages,
         and track employee time with precision.
       </p>
-      <div class="flex gap-6 mb-6 h-[8vh]">
+      <div class="flex gap-6 mb-[1.5rem] md:mb-[2.5rem] h-[8vh]">
         <button
-          class="bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
+          class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-indigo-500  px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
           Get Started Free <i class="uil uil-arrow-right"></i>
         </button>
-        <button class="border border-white px-6 py-3 rounded-xl flex items-center gap-2">
+        <button class="border border-white px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-[#55386a6a]">
           <i class="uil uil-play text-blue-500"></i> Watch Demo
         </button>
       </div>
@@ -166,7 +217,8 @@
 
   <!-- <section id="why-nexus"
   class="opacity-0 translate-y-10 transition-all duration-700 ease-out py-20 px-4 max-w-7xl mx-auto"> -->
-  <section id="why-nexus" class="relative py-20 px-4 max-w-7xl mx-auto min-h-[100vh] overflow-hidden">
+  <section id="why-nexus"
+    class="relative py-14 md:py-20 px-4 max-w-7xl mx-auto min-h-[75vh] md:min-h-[74vh] overflow-hidden">
     <!-- Adjust min-h-[800px] as needed -->
     <div id="why-nexus-content"
       class="absolute inset-0 opacity-0 translate-x-full transition-all duration-700 ease-in-out">
@@ -182,69 +234,75 @@
         <p class="text-gray-300 mt-4">Discover the powerful features that make NexusFlow the preferred choice for modern
           teams</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
-          <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mx-2">
+
+        <div class="bg-white bg-opacity-10 p-2 sm:p-3 md:p-6 w-full rounded-2xl shadow-md text-center">
+          <div
+            class="w-8 h-8 sm:w-10 sm:h-10 bg-pink-700 rounded-md mx-auto mb-3 flex items-center justify-center text-white text-sm sm:text-base">
             <i class="uil uil-globe"></i>
           </div>
-          <h4 class="text-xl font-semibold text-white mb-2">Global Reach</h4>
-          <p class="text-yellow-100">Connect With Opportunities Worldwide Through Our Extensive Network</p>
+          <h4 class="text-sm sm:text-base md:text-xl font-semibold text-white mb-2">Global Reach</h4>
+          <p class="text-[10px] sm:text-xs md:text-yellow-100 text-yellow-100">Connect With Opportunities Worldwide
+            Through Our Extensive Network</p>
         </div>
-        <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
-          <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
-            <i class="uil uil-shield"></i>
+
+        <div class="bg-white bg-opacity-10 p-2 sm:p-3 md:p-6 w-full rounded-2xl shadow-md text-center">
+          <div
+            class="w-8 h-8 sm:w-10 sm:h-10 bg-pink-700 rounded-md mx-auto mb-3 flex items-center justify-center text-white text-sm sm:text-base">
+            <i class="uil uil-globe"></i>
           </div>
-          <h4 class="text-xl font-semibold text-white mb-2">Secure Platform</h4>
-          <p class="text-yellow-100">Enterprise-grade security protecting your data and transactions</p>
+          <h4 class="text-sm sm:text-base md:text-xl font-semibold text-white mb-2">Global Reach</h4>
+          <p class="text-[10px] sm:text-xs md:text-yellow-100 text-yellow-100">Connect With Opportunities Worldwide
+            Through Our Extensive Network</p>
         </div>
-        <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
-          <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
-            <i class="uil uil-bolt-alt"></i>
+        <div class="bg-white bg-opacity-10 p-2 sm:p-3 md:p-6 w-full rounded-2xl shadow-md text-center">
+          <div
+            class="w-8 h-8 sm:w-10 sm:h-10 bg-pink-700 rounded-md mx-auto mb-3 flex items-center justify-center text-white text-sm sm:text-base">
+            <i class="uil uil-globe"></i>
           </div>
-          <h4 class="text-xl font-semibold text-white mb-2">Lightning Fast</h4>
-          <p class="text-yellow-100">Optimized performance delivering results in milliseconds</p>
+          <h4 class="text-sm sm:text-base md:text-xl font-semibold text-white mb-2">Global Reach</h4>
+          <p class="text-[10px] sm:text-xs md:text-yellow-100 text-yellow-100">Connect With Opportunities Worldwide
+            Through Our Extensive Network</p>
         </div>
 
-        <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
-          <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
-            <i class="uil uil-bolt-alt"></i>
+        <div class="bg-white bg-opacity-10 p-2 sm:p-3 md:p-6 w-full rounded-2xl shadow-md text-center">
+          <div
+            class="w-8 h-8 sm:w-10 sm:h-10 bg-pink-700 rounded-md mx-auto mb-3 flex items-center justify-center text-white text-sm sm:text-base">
+            <i class="uil uil-globe"></i>
           </div>
-          <h4 class="text-xl font-semibold text-white mb-2">Lightning Fast</h4>
-          <p class="text-yellow-100">Optimized performance delivering results in milliseconds</p>
+          <h4 class="text-sm sm:text-base md:text-xl font-semibold text-white mb-2">Global Reach</h4>
+          <p class="text-[10px] sm:text-xs md:text-yellow-100 text-yellow-100">Connect With Opportunities Worldwide
+            Through Our Extensive Network</p>
         </div>
 
 
-        <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
-          <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
-            <i class="uil uil-bolt-alt"></i>
+        <div class="bg-white bg-opacity-10 p-2 sm:p-3 md:p-6 w-full rounded-2xl shadow-md text-center">
+          <div
+            class="w-8 h-8 sm:w-10 sm:h-10 bg-pink-700 rounded-md mx-auto mb-3 flex items-center justify-center text-white text-sm sm:text-base">
+            <i class="uil uil-globe"></i>
           </div>
-          <h4 class="text-xl font-semibold text-white mb-2">Lightning Fast</h4>
-          <p class="text-yellow-100">Optimized performance delivering results in milliseconds</p>
+          <h4 class="text-sm sm:text-base md:text-xl font-semibold text-white mb-2">Global Reach</h4>
+          <p class="text-[10px] sm:text-xs md:text-yellow-100 text-yellow-100">Connect With Opportunities Worldwide
+            Through Our Extensive Network</p>
         </div>
 
 
-        <div class="bg-white bg-opacity-10 p-6 rounded-2xl shadow-md text-center">
-          <div class="w-10 h-10 bg-pink-700 rounded-md mx-auto mb-4 flex items-center justify-center text-white">
-            <i class="uil uil-bolt-alt"></i>
+        <div class="bg-white bg-opacity-10 p-2 sm:p-3 md:p-6 w-full rounded-2xl shadow-md text-center">
+          <div
+            class="w-8 h-8 sm:w-10 sm:h-10 bg-pink-700 rounded-md mx-auto mb-3 flex items-center justify-center text-white text-sm sm:text-base">
+            <i class="uil uil-globe"></i>
           </div>
-          <h4 class="text-xl font-semibold text-white mb-2">Lightning Fast</h4>
-          <p class="text-yellow-100">Optimized performance delivering results in milliseconds</p>
+          <h4 class="text-sm sm:text-base md:text-xl font-semibold text-white mb-2">Global Reach</h4>
+          <p class="text-[10px] sm:text-xs md:text-yellow-100 text-yellow-100">Connect With Opportunities Worldwide
+            Through Our Extensive Network</p>
         </div>
-
-
-
-
-
-
-
       </div>
   </section>
 
   <!-- More sections like CHOOSE, STAT, TESTIMONIAL, READY, FOOTER go here -->
 
   <!-- STATS SECTION -->
-  <section id="stats-section"
-    class=" py-20 px-4 max-w-7xl mx-auto "data-aos="fade-left">
+  <section id="stats-section" class=" py-20 px-4 max-w-7xl mx-auto" data-aos="fade-left">
     <div class="flex flex-wrap justify-center gap-16 bg-white bg-opacity-10 p-10 rounded-2xl backdrop-blur">
       <div class="text-center">
         <h2 class="text-4xl font-bold text-white"><span class="counter inline-block min-w-[5ch] text-center"
@@ -276,7 +334,7 @@
 
   <!-- TESTIMONIAL SECTION -->
   <!-- TESTIMONIAL SECTION -->
-  <section class="py-20 px-4 max-w-7xl mx-auto" id="testimonials">
+  <section class="py-15 md:py-20 px-4 max-w-7xl mx-auto" id="testimonials">
     <div class="text-center mb-12">
       <h2 class="text-4xl font-bold text-yellow-100">What Our Customers Say</h2>
       <p class="text-gray-300 mt-2">Join Thousands Of Satisfied Customers Worldwide</p>
@@ -288,7 +346,7 @@
         <div class="flex gap-6">
           <!-- Cards 1–3 -->
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person 1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -302,7 +360,7 @@
 
           </div>
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person 2.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -316,7 +374,7 @@
 
           </div>
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person 3.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -334,7 +392,7 @@
         <div class="flex gap-6">
           <!-- Cards 1–3 duplicated -->
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person 4.jpeg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -348,7 +406,7 @@
 
           </div>
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person 5.jpeg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -362,7 +420,7 @@
 
           </div>
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person 1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -385,7 +443,7 @@
         <div class="flex gap-6">
           <!-- Cards 4–6 -->
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person 2.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -399,7 +457,7 @@
 
           </div>
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person 3.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -413,7 +471,7 @@
 
           </div>
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person 4.jepg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -430,7 +488,7 @@
         <div class="flex gap-6">
           <!-- Cards 4–6 duplicated -->
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -444,7 +502,7 @@
 
           </div>
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -458,7 +516,7 @@
 
           </div>
           <div class="testimonial-card">
-            <div class="w-[25vw] h-[12rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
+            <div class="w-[40vw] md:w-[25vw] h-[14rem]  bg-white text-black rounded-md p-3 shadow-md shrink-0">
               <img src="images/person1.jpg" class="w-12 h-12 rounded-full mx-auto" alt="User">
               <h3 class="mt-2 text-center text-sm font-semibold">Amit Sharma</h3>
               <div class="flex justify-center text-yellow-400 text-xs mt-1">
@@ -497,7 +555,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#2e3267] py-20 text-white text-sm">
+  <footer class="bg-[#2e3267] py-20 text-white text-sm ">
     <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-10">
       <div>
         <div class="flex items-center space-x-3 mb-3">
@@ -509,6 +567,7 @@
         </div>
         <p class="text-gray-300">Transforming workflows for modern teams worldwide</p>
       </div>
+
       <div>
         <h4 class="font-semibold text-white mb-4">Permalinks</h4>
         <ul class="space-y-2">
@@ -526,6 +585,7 @@
           <li><a href="#" class="hover:underline">Refund Policy</a></li>
         </ul>
       </div>
+
       <div>
         <h4 class="font-semibold text-white mb-4">Contact Us</h4>
         <p class="text-gray-300">+91 8910893178</p>
@@ -559,21 +619,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
 
-  <!-- Hamburger Menu Script -->
-  <script>
-    const navMenu = document.querySelector('.nav_menu');
-    const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'md:hidden text-white text-3xl';
-    toggleBtn.innerHTML = '<i class="uil uil-bars"></i>';
 
-    document.querySelector('nav > div').prepend(toggleBtn);
-
-    toggleBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('hidden');
-      navMenu.classList.toggle('flex');
-      navMenu.classList.add('flex-col', 'bg-[#0a0a23]', 'absolute', 'top-20', 'left-0', 'w-full', 'text-center', 'py-4');
-    });
-  </script>
 
 
   <!-- HOMEPAGE ANIMATIONS + INTERACTIONS -->
@@ -615,10 +661,12 @@
         for (let i = 0; i < word.length; i++) {
           const charBox = document.createElement("div");
           charBox.classList.add(
-            "w-8", "h-10",
+            "w-6", "h-8",               // small screen size
+            "md:w-8", "md:h-10",       // medium and up
             "flex", "items-center", "justify-center",
             "border", "border-gray-700",
-            "text-xl", "font-bold", "text-gray-400",
+            "text-base", "md:text-xl", // responsive text size
+            "font-bold", "text-gray-400",
             "transition-all", "duration-300"
           );
           charBox.textContent = word[i];
@@ -778,11 +826,30 @@
     }
   </script>
 
+  <!--Hamburger code given belooooowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww-->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
 
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent the body click from firing immediately
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+    });
 
-
-
-
+    // Hide menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (
+        !menu.contains(e.target) &&
+        !menuToggle.contains(e.target) &&
+        window.innerWidth < 768 && // Only on mobile
+        menu.classList.contains('flex')
+      ) {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+      }
+    });
+  </script>
 
 </body>
 

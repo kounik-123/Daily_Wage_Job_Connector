@@ -3,30 +3,105 @@
 
 
 
-@keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* .scroll-left {
+  animation: scrollLeft 20s linear infinite;
 }
-@keyframes scroll-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-.scroll-left {
-  animation: scroll-left 1s linear infinite;
-}
+
 .scroll-right {
-  animation: scroll-right 1s linear infinite;
+  animation: scrollRight 20s linear infinite;
 }
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+ */
+
+
+/* 
+ @keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
+} */
+
 
 
 html {
     scroll-behavior: smooth;
   }
   
+/* 
+    /* Styles for the custom scrollbar *
+    ::-webkit-scrollbar {
+      width: 6px;
+      opacity: 0; /* Initially transparent *
+      transition: opacity 0.3s ease; /* Smooth transition effect *
+    }
+    
+    /* Show the scrollbar on hover *
+    ::-webkit-scrollbar:hover {
+      opacity: 1; /* Fully visible on hover *
+    }
+    
+    /* Track (the background of the scrollbar) *
+    ::-webkit-scrollbar-track {
+      background: #1a1440; /* Dark background color *
+    }
+    
+    /* Thumb (the draggable part of the scrollbar) *
+    ::-webkit-scrollbar-thumb {
+      background: #4c1d95; /* Color of the scrollbar thumb *
+      border-radius: 5px; /* Rounded corners for the thumb *
+    }
+    
+    /* Optional: Hover effect on the thumb *
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9333ea;
+    }
+
+*/
