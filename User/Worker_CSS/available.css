@@ -1,0 +1,350 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.available_container h2
+{
+position:absolute;
+
+left:300px;
+
+top:100px;
+
+
+}
+
+
+.available_boxes
+{
+    position:absolute;
+
+    display:flex;
+
+    flex-wrap: wrap;
+
+    gap:20px;
+
+    left:240px;
+
+ top:70px;
+
+   
+}
+
+
+.available_box1
+{
+    position:relative;
+
+    height:340px;
+
+    width:530px;
+
+    border:2px solid transparent;
+
+    left:10px;
+
+    top:117px;
+
+    border-radius: 20px;
+
+    box-shadow:0 8px 32px rgba(4, 6, 134, 0.25);
+        background: rgb(242, 252, 250);
+
+}
+
+.available_box1 h4
+{
+    position:relative;
+
+    left:12px;
+
+    top:11px;
+}
+
+.para1
+{
+    position:relative;
+
+    left:263px;
+
+    top:-11px;
+
+    width:68px;
+
+    height:25px;
+
+    border:1px solid transparent;
+
+    border-radius:11px;
+
+    background-color: #fddede;  /* light red background */
+
+  color: #d10000; 
+}
+
+.para1 p
+{
+    position:absolute;
+
+    left:13px;
+
+    font-size:13px;
+
+    top:2px;
+
+}
+
+
+.active_1 
+{
+position:relative;
+
+    left:372px;
+
+    top:-35px;
+
+    width:121px;
+
+    height:25px;
+
+    border:1px solid transparent;
+
+    border-radius:11px;
+    display: flex;
+
+     background-color: #e6f4ea;   /* very light green background */
+  color: #188038;   
+
+}
+
+.active_1 p
+{
+    position:absolute;
+
+    left:35px;
+}
+
+.uil-exclamation-circle
+{
+    position:absolute;
+
+    left:10px;
+}
+
+.content_1
+{
+   position:relative;
+
+   left:20px;
+
+   display:flex;
+
+   gap:10px;
+
+}
+
+.content_boxes
+{
+    position:relative;
+
+    left:40px;
+}
+
+
+.content_boxes_1
+{
+    display:flex;
+
+    position:relative;
+
+    top:25px;
+
+    left:20px;
+
+    gap:8px;
+}
+
+.content_boxes_2
+{
+     display:flex;
+
+     position:relative;
+
+     top:5px;
+
+    left:250px;
+
+    gap:8px;
+}
+
+.content_boxes_3
+{
+    display:flex;
+
+    position:relative;
+
+    top:25px;
+
+    left:20px;
+    gap:8px;
+}
+
+.content_boxes_4
+{
+     display:flex;
+
+     position:relative;
+
+     top:5px;
+
+    left:250px;
+
+    gap:8px;
+}
+
+.tag
+{
+    position:relative;
+
+    display:flex;
+
+    top:30px;
+
+    left:20px;
+
+    gap:15px;
+}
+
+.tag i{
+color: red;
+
+}
+
+.buttons
+{
+    display: flex;
+
+    position:relative;
+
+    top:50px;
+
+    gap:80px;
+
+    left:60px;
+}
+
+/* Container */
+.buttons {
+  display: flex;
+  position: relative;
+  top: 50px;
+  gap: 80px;
+  left: 60px;
+}
+
+/* Common Base Style */
+.apply_now, .view_details {
+  width: 220px;
+  height: 40px;
+  position: relative;
+  top: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Text Styles */
+.apply_now p, .view_details p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-weight: normal;
+  transition: color 0.3s;
+}
+
+/* --- Apply Now: Sweep to Bottom --- */
+.apply_now {
+  left: -35px;
+  background-color: rgb(85, 85, 226);
+  border: none;
+}
+
+.apply_now p {
+  left: 72px;
+  top: 5px;
+  color: white;
+}
+
+.apply_now::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fddede; 
+  z-index: 1;
+  transition: top 0.3s ease;
+}
+
+.apply_now:hover::before {
+  top: 0;
+ 
+}
+
+.apply_now:hover p {
+   color: #d10000; 
+}
+
+/* --- View Details: Sweep to Left --- */
+.view_details {
+  width: 220px;
+  height: 40px;
+  position: relative;
+  top: 20px;
+  left: -90px;
+  background-color: rgb(85, 85, 226);
+  border: 1px solid grey;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  
+}
+
+.view_details p {
+  position: relative;
+  z-index: 2;
+  left: 67px;
+  top: 6px;
+  margin: 0;
+  font-weight: normal;
+  color: #333;
+  transition: color 0.4s ease;
+}
+
+/* Background swipe animation */
+.view_details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background-color: white; /* Changed to black for better contrast */
+  transform: skew(30deg) translateX(0);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  z-index: 1;
+}
+
+.view_details:hover::before {
+  transform: skew(30deg) translateX(100%);
+}
+
+.view_details:hover p {
+  color: white; /* Stay white on hover */
+}

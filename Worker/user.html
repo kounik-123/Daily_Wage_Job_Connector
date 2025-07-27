@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Icons -->
+  <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
+  <link href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css" rel="stylesheet">
+
+  <style>
+    .active-box, .active-bar {
+      transition: transform 0.3s ease;
+    }
+    .icon-bounce {
+      animation: bounce 0.4s ease;
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+<!-- ✅ Wrapper with sidebar() -->
+<div class="flex h-screen overflow-hidden" x-data="sidebar()" x-init="init()">
+
+  <!-- ✅ Toggle Button -->
+  <button
+    @click="open = !open"
+    class="fixed top-4 left-4 z-50 bg-blue-600 text-white text-2xl px-3 py-1 rounded shadow"
+  >
+    <span x-text="open ? '✖' : '≡'"></span>
+  </button>
+
+  <!-- ✅ Sidebar with transition -->
+  <div :class="open ? 'w-60' : 'w-16'" class="relative h-screen transition-all duration-300 flex-shrink-0">
+
+    <!-- Blue Background Box -->
+    <div class="absolute bg-blue-600 rounded-lg h-12 mx-2 active-box z-0 w-[calc(100%-1rem)]"
+         :style="'transform: translateY(' + translateY + 'px)'"></div>
+
+    <!-- Blue Line -->
+    <div class="absolute bg-blue-600 w-1 h-12 rounded-r active-bar z-10"
+         :style="'transform: translateY(' + translateY + 'px)'"></div>
+
+    <!-- TOP MENU WRAPPER -->
+<div class="mt-6">
+    <!-- ✅ Sidebar Top Buttons -->
+    <div class="flex flex-col space-y-2 px-0 pt-12" x-ref="menuTop">
+      <template x-for="(item, index) in menu.slice(0, menu.length - 2)" :key="item">
+        <button
+          @click="setActive(index)"
+          :class="{
+            'bg-transparent hover:bg-gray-700/10 hover:text-blue-400': activeIndex !== index,
+            'text-white': true
+          }"
+          class="h-12 flex items-center px-4 rounded-lg relative z-20 transition-all duration-200 group"
+        >
+          <span
+  class="text-2xl transition-all duration-300"
+  :class="[
+  open ? 'ml-2' : 'ml-1 -translate-x-1',
+  activeIndex === index ? 'icon-bounce scale-125 text-blue-400' : ''
+]"
+
+  x-text="icons[item]"
+></span>
+          <span x-show="open" x-transition class="ml-3 text-base whitespace-nowrap" x-text="item"></span>
+        </button>
+      </template>
+    </div>
+
+    <!-- ✅ Sidebar Bottom Buttons -->
+    <div class="absolute bottom-4 w-full flex flex-col space-y-2 px-0" x-ref="menuBottom">
+      <template x-for="(item, index) in menu.slice(menu.length - 2)" :key="item">
+        <button
+          @click="setActive(index + menu.length - 2)"
+          :class="{
+            'bg-transparent hover:bg-gray-700/10 hover:text-blue-400': activeIndex !== (index + menu.length - 2),
+            'text-white': true
+          }"
+          class="h-12 flex items-center px-4 rounded-lg relative z-20 transition-all duration-200 group"
+        >
+        <span
+  class="text-2xl transition-all duration-300"
+  :class="[
+  open ? 'ml-2' : 'ml-1 -translate-x-1',
+  activeIndex === (index + menu.length - 2) ? 'icon-bounce scale-125 text-blue-400' : ''
+]"
+
+  x-text="icons[item]"
+></span>
+          <span x-show="open" x-transition class="ml-3 text-base whitespace-nowrap" x-text="item"></span>
+        </button>
+      </template>
+    </div>
+    </div>
+
+  </div>
+
+  
+  <!-- Main Content -->
+<div class="flex-1 flex flex-col overflow-auto">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between bg-gray-800 px-6 py-4 md:py-6">
+      <button @click="open = !open" class="text-gray-400 focus:outline-none md:hidden">☰</button>
+      <input type="text" placeholder="Search..." class="bg-gray-700 text-sm px-4 py-2 rounded-lg w-1/2 placeholder-gray-400 focus:outline-none"/>
+      <div class="flex items-center space-x-4">
+        <div class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">📧</div>
+        <div class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">🔔</div>
+        <div class="w-8 h-8 rounded-full bg-gray-600"></div>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="p-6 space-y-6 max-w-screen-xl mx-auto w-full">
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 ">
+        <div class="bg-gray-800 p-4 rounded-lg ">
+          <h3 class="text-sm text-gray-400 relative left-2 top-8">Total Orders</h3>
+          <p class="text-2xl font-bold relative left-2 top-8">75</p>
+          <div class="bg-blue-500 relative left-4 -top-16 w-10 rounded-lg">
+            <i class="uil uil-shopping-basket text-2xl relative left-2 -top-0.5"></i>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 p-4 rounded-lg ">
+          <h3 class="text-sm text-gray-400 relative left-2 top-8">Delivered</h3>
+          <p class="text-2xl font-bold relative left-2 top-8">70</p>
+          <div class="bg-green-500 relative left-4 -top-16 w-10 h-9 rounded-lg">
+            <i class="uil uil-shopping-bag text-2xl relative left-2 -top-0.5 text-green-300"></i>
+            <i class="uis uis-check-circle relative left-5 -top-5 text-green-300"></i>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <h3 class="text-sm text-gray-400 relative left-2 top-8">Cancelled</h3>
+          <p class="text-2xl font-bold relative left-2 top-8">5</p>
+          <div class="bg-red-800 relative left-4 -top-16 w-10 h-9 rounded-lg">
+            <i class="uil uil-shopping-bag text-2xl relative left-2 -top-0.5 text-red-500"></i>
+            <i class="uis uis-times-circle relative left-5 -top-5 text-red-400"></i>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 p-4 rounded-lg ">
+          <h3 class="text-sm text-gray-400 relative left-2 top-8">Revenue</h3>
+          <p class="text-2xl font-bold relative left-2 top-8">$12k</p>
+          <div class="bg-pink-800 relative left-4 -top-16 w-10 h-9 rounded-lg">
+            <i class="uil uil-exchange transform rotate-90 text-2xl relative left-1 -top-0.5 text-pink-500"></i>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 p-4 rounded-lg flex items-center justify-between ">
+          <div>
+            <h3 class="text-sm text-gray-400">Profit</h3>
+            <p class="text-2xl font-bold">$6759</p>
+            <p class="text-green-400 text-sm mt-1">▲ +3%</p>
+          </div>
+          <div class="w-16 h-16">
+            <canvas id="profitChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity Chart & Quick Links -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-gray-800 p-4 rounded-lg col-span-2">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-semibold">Activity</h3>
+            <select id="timeRange" class="bg-gray-700 text-white px-3 py-1 rounded-md text-sm focus:outline-none">
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+              <option value="yearly">Yearly</option>
+            </select>
+          </div>
+          <div class="w-full h-[260px]">
+            <canvas id="activityChart" class="w-full h-full"></canvas>
+          </div>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg space-y-3">
+          <h3 class="text-lg font-semibold">Quick Links</h3>
+          <div class="bg-gray-700 p-2 rounded-lg">🎯 Goals</div>
+          <div class="bg-gray-700 p-2 rounded-lg">🍽️ Popular Dishes</div>
+          <div class="bg-gray-700 p-2 rounded-lg">📋 Menus</div>
+        </div>
+      </div>
+
+      <!-- Orders and Feedback -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-gray-800 p-4 rounded-lg overflow-auto">
+          <h3 class="text-lg font-semibold mb-4">Recent Orders</h3>
+          <table class="w-full text-sm">
+            <thead class="text-left text-gray-400 border-b border-gray-700">
+              <tr>
+                <th>Customer</th><th>Order No</th><th>Amount</th><th>Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-white">
+              <tr class="border-b border-gray-700">
+                <td>Wade Warren</td><td>987123</td><td>$128.00</td><td><span class="text-green-400 ">Delivered</span></td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td>Jane Cooper</td><td>456789</td><td>$84.00</td><td><span class="text-yellow-400">Pending</span></td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td>Guy Hawkins</td><td>123456</td><td>$98.00</td><td><span class="text-red-400">Cancelled</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg h-64 overflow-y-auto">
+          <h3 class="text-lg font-semibold mb-4">Customer Feedback</h3>
+          <div class="space-y-4">
+            <div><h4>Jenny Wilson</h4><p class="text-yellow-400">★★★★★</p><p class="text-gray-300 text-sm">Burger was amazing!</p></div>
+            <div><h4>Dianne Russell</h4><p class="text-yellow-400">★★★★☆</p><p class="text-gray-300 text-sm">Loved the focaccia.</p></div>
+            <div><h4>Devon Lane</h4><p class="text-yellow-400">★★★★★</p><p class="text-gray-300 text-sm">Great ambience!</p></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Chart Scripts -->
+<script>
+  let activityChart, profitChart;
+
+  const chartDataSets = {
+    weekly: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      data: [5, 6, 4.5, 8, 6.5, 9, 7]
+    },
+    monthly: {
+      labels: Array.from({ length: 28 }, (_, i) => (i + 1).toString()),
+      data: Array.from({ length: 28 }, () => Math.floor(Math.random() * 10) + 4)
+    },
+    yearly: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      data: [50, 65, 70, 80, 75, 60, 68, 85, 72, 90, 78, 88]
+    }
+  };
+
+  const ctx = document.getElementById('activityChart').getContext('2d');
+  activityChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: chartDataSets.weekly.labels,
+      datasets: [{
+        label: 'Activity',
+        data: chartDataSets.weekly.data,
+        backgroundColor: '#4B6EF5',
+        borderRadius: 6,
+        barPercentage: 0.6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        x: { ticks: { color: 'white' }, grid: { color: 'rgba(255,255,255,0.1)' }},
+        y: { ticks: { color: 'white' }, grid: { color: 'rgba(255,255,255,0.1)' }}
+      }
+    }
+  });
+
+  document.getElementById('timeRange').addEventListener('change', function () {
+    const selected = this.value;
+    activityChart.data.labels = chartDataSets[selected].labels;
+    activityChart.data.datasets[0].data = chartDataSets[selected].data;
+    activityChart.update();
+  });
+
+  const profitCtx = document.getElementById('profitChart').getContext('2d');
+  profitChart = new Chart(profitCtx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [70, 30],
+        backgroundColor: ['rgb(59, 130, 246)', '#374151'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      cutout: '70%',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false }
+      }
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    activityChart.resize();
+    profitChart.resize();
+  });
+</script>
+
+<!-- Alpine Sidebar Function -->
+<!-- Paste this entire updated sidebar Alpine.js component inside your <script> tag -->
+<!-- 🔁 REPLACE THE SIDEBAR FUNCTION WITH THIS UPDATED ONE -->
+<script>
+  function sidebar() {
+  return {
+    open: true,
+    menu: ['Home', 'Available Jobs', 'Active Jobs', 'Past Jobs', 'Wallet', 'Search Jobs', 'Settings', 'Sign Out'],
+    icons: {
+      'Home': '🏠',
+      'Available Jobs': '💼',
+      'Active Jobs': '☑️',
+      'Past Jobs': '🕓',
+      'Wallet': '💳',
+      'Search Jobs': '🔍',
+      'Settings': '⚙️',
+      'Sign Out': '🚪'
+    },
+    activeIndex: 0,
+    topCount: 6,
+    itemHeight: 56,
+    offsetTop: 79,
+    bottomOffsetFix: 11, // ✅ This aligns bottom buttons like top ones
+
+    init() {
+      this.setActive(0);
+    },
+
+    setActive(index) {
+      this.activeIndex = index;
+      setTimeout(() => {
+        const icons = document.querySelectorAll('.icon-bounce');
+        icons.forEach(icon => icon.classList.remove('icon-bounce'));
+      }, 400);
+    },
+
+    get translateY() {
+      if (this.activeIndex < this.topCount) {
+        return this.offsetTop + this.activeIndex * this.itemHeight;
+      } else {
+        const bottomOffset = this.$refs.menuBottom?.offsetTop || 0;
+        const bottomIndex = this.activeIndex - this.topCount;
+        return bottomOffset + this.bottomOffsetFix + bottomIndex * this.itemHeight;
+      }
+    }
+  };
+}
+
+</script>
+
+</body>
+</html>
