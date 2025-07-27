@@ -35,50 +35,31 @@
         <div class="text-2xl font-bold text-white mb-8">📊 Dashboard</div>
 
         <nav class="flex flex-col gap-4 text-lg relative">
-          <template x-for="item in ['Dashboard', 'Past Job', 'Active Job' , 'Wallet' ,'Settings']" :key="item">
-            <div class="relative">
-             <!-- Blue Bar -->
-              <div
-                x-show="active === item"
-                class="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 bg-blue-500 rounded transition-all duration-300">
-              </div>
+  <template x-for="item in ['Dashboard', 'Past Job', 'Active Job', 'Wallet', 'Settings']" :key="item">
+    <a
+      :href="`${item.replace(/ /g, '_').toLowerCase()}.html`"
+      @click="active = item"
+      class="relative pl-4 pr-2 flex items-center space-x-2 transition-all duration-300"
+      :class="active === item ? 'text-blue-500 font-semibold' : 'text-gray-300 hover:text-white'">
+      
+      <!-- Blue bar -->
+      <div
+        x-show="active === item"
+        class="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 bg-blue-500 rounded transition-all duration-300">
+      </div>
 
-              <a href="dashboard.html" class="pl-4 pr-2 flex items-center space-x-2 transition-all duration-300" :class="active === item ? 'text-blue-500 font-semibold' : 'text-gray-300 hover:text-white'">
-            
-              <a href="past_job.html" class="pl-4 pr-2 flex items-center space-x-2 transition-all duration-300" :class="active === item ? 'text-blue-500 font-semibold' : 'text-gray-300 hover:text-white'">
+      <!-- Icon -->
+      <template x-if="item === 'Dashboard'"><span>📊</span></template>
+      <template x-if="item === 'Past Job'"><span>✅</span></template>
+      <template x-if="item === 'Active Job'"><span>⏰</span></template>
+      <template x-if="item === 'Wallet'"><span>💳</span></template>
+      <template x-if="item === 'Settings'"><span>⚙️</span></template>
 
-                <template x-if="item === 'Dashboard'">
-                 <span>📊</span>
-                </template>
+      <span class="ml-2" x-text="item"></span>
+    </a>
+  </template>
+</nav>
 
-
-                <template x-if="item === 'Past Job'">
-                 <span>✅</span>
-                </template>
-
-
-                <template x-if="item === 'Active Job'">
-                <span>⏰</span>
-                </template>
-
-
-                <template x-if="item === 'Wallet'">
-                <span>💳 </span>
-                </template>
-
-
-
-                <template x-if="item === 'Settings'">
-                <span>⚙️</span>
-                </template>
-
-
-                <span class="ml-2" x-text="item"></span>
-              </a>
-              </a>
-            </div>
-          </template>
-        </nav>
      </div>
   </aside>
 
