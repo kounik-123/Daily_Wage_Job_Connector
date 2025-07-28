@@ -114,12 +114,27 @@
 
     <!-- Header -->
     <header class="flex items-center justify-between bg-gray-800 px-6 py-4 md:py-6">
-      <button @click="open = !open" class="text-gray-400 focus:outline-none md:hidden">☰</button>
-      <input type="text" placeholder="Search..." class="bg-gray-700 text-sm px-4 py-2 rounded-lg w-1/2 placeholder-gray-400 focus:outline-none"/>
+     
+      <input type="text" placeholder="Search..." class="bg-gray-700 text-sm px-4 py-2 rounded-lg w-1/4 placeholder-gray-400 focus:outline-none"/>
       <div class="flex items-center space-x-4">
         <div class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">📧</div>
         <div class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">🔔</div>
-        <div class="w-8 h-8 rounded-full bg-gray-600"></div>
+       <div class="w-15 h-10 flex items-center justify-between bg-gray-800 p-4 rounded-md  max-w-md mx-auto">
+  <!-- Profile Section -->
+  <div class="flex items-center space-x-4">
+    <!-- Avatar -->
+    <div class="w-10 h-9 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M5.121 17.804A8.966 8.966 0 0112 15c2.042 0 3.918.68 5.379 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    </div>
+    <!-- Name & Email -->
+    <div>
+      <div class="font-semibold text-sm text-gray-50">John Employer</div>
+      <div class="text-xs text-gray-500">john@techcorp.com</div>
+    </div>
+  </div>
       </div>
     </header>
 
@@ -341,6 +356,19 @@
 
     setActive(index) {
       this.activeIndex = index;
+       // Redirect logic
+  const pageRoutes = {
+    0: "worker_dashboard.html",         // Home
+    1: "available-jobs.html",
+    2: "active-jobs.html",   // Active Jobs
+    3: "past-jobs.html",
+    4: "wallet.html",
+    5: "search-jobs.html",
+    6: "settings.html",
+    7: "signout.html"
+  };
+
+  
       setTimeout(() => {
         const icons = document.querySelectorAll('.icon-bounce');
         icons.forEach(icon => icon.classList.remove('icon-bounce'));
