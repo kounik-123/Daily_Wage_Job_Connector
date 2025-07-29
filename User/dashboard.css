@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  color: white;
+  background-color: #111827;
+}
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+.sidebar {
+  width: 250px;
+  background-color: #1f2937;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+.sidebar h2 {
+  font-size: 1.5rem;
+}
+.nav-links a {
+  display: block;
+  color: #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.nav-links a.active,
+.nav-links a:hover {
+  background-color: #374151;
+  color: #3b82f6;
+}
+.close-btn, .menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border: none;
+}
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background-color: #1f2937;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  width: 50%;
+  background: #374151;
+  color: #ccc;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.icon {
+  background: #374151;
+  padding: 10px;
+  border-radius: 50%;
+}
+.profile-box {
+  display: flex;
+  gap: 10px;
+}
+.avatar {
+  background: linear-gradient(to bottom right, #10b981, #3b82f6);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-icon {
+  width: 20px;
+  height: 20px;
+}
+.profile-info {
+  font-size: 12px;
+}
+
+
+
+
+.content {
+  padding: 20px;
+  overflow-y: auto;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.stat-box {
+  background: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+}
+.stat-box h3 {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.stat-box p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.stat-box.profit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.charts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.activity, .quick-links {
+  background: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+}
+.quick-links .link {
+  background: #374151;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.orders, .feedback {
+  background: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+}
+table {
+  width: 100%;
+  color: white;
+  margin-top: 10px;
+}
+thead {
+  background: #374151;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+.green { color: #10b981; }
+.yellow { color: #fbbf24; }
+.red { color: #ef4444; }
+.feedback-box div {
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    left: -250px;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+  .sidebar.open {
+    left: 0;
+  }
+  .close-btn, .menu-btn {
+    display: block;
+  }
+  .stats, .charts, .tables {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* ... Keep all previous CSS ... */
+
+@media (max-width: 1024px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+
+  .tables {
+    grid-template-columns: 1fr;
+  }
+
+  .search {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .profile {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    left: -100%;
+    transition: left 0.3s ease;
+    width: 220px;
+    z-index: 100;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .menu-btn,
+  .close-btn {
+    display: block;
+    cursor: pointer;
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .main {
+    overflow-x: hidden;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .nav-links a {
+    padding: 10px 5px;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="past_job1.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <h2>✅ Post a Job</h2>
+    <nav class="nav-links">
+      <a href="dashboard.html"  onclick="setActive(this)">📊 Dashboard</a>
+      <a href="past_job1.html" class="active" onclick="setActive(this)">✅ Post a Job</a>
+      <a href="active_job.html" onclick="setActive(this)">⏰ Active Job</a>
+      <a href="wallet.html" onclick="setActive(this)">💳 Wallet</a>
+      <a href="settings.html" onclick="setActive(this)">⚙️ Settings</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <!-- Header -->
+    <header class="header">
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+      <input type="text" placeholder="Search..." class="search">
+      <div class="profile">
+        <div class="icon">📧</div>
+        <div class="icon">🔔</div>
+        <div class="profile-box">
+          <div class="avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" class="avatar-icon" viewBox="0 0 24 24">
+              <path d="M5.121 17.804A8.966 8.966 0 0112 15c2.042 0 3.918.68 5.379 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              stroke="white" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="profile-info">
+            <div class="name">John Employer</div>
+            <div class="email">john@techcorp.com</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+      <!-- Job Form -->
+      <section class="job-form">
+        <h2>Job Details</h2>
+        <div class="form-grid">
+          <div>
+            <label>Job Title *</label>
+            <input type="text" placeholder="e.g. Senior React Developer">
+          </div>
+          <div>
+            <label>Category *</label>
+            <select>
+              <option>Select Category</option>
+            </select>
+          </div>
+          <div>
+            <label>Job Description *</label>
+            <textarea rows="4" placeholder="Describe the role..."></textarea>
+          </div>
+          <div>
+            <label>Salary ($) *</label>
+            <input type="number" placeholder="75000">
+          </div>
+          <div>
+            <label>Job Type *</label>
+            <select>
+              <option>Full Time</option>
+              <option>Part Time</option>
+              <option>Contract</option>
+            </select>
+          </div>
+          <div>
+            <label>Location *</label>
+            <input type="text" placeholder="San Francisco, CA or Remote">
+          </div>
+          <div>
+            <label>Experience Required *</label>
+            <input type="text" placeholder="e.g. 3+ years">
+          </div>
+          <div>
+            <label>Requirements *</label>
+            <input type="text" placeholder="React, TypeScript, Node.js">
+          </div>
+          <div>
+            <label>Qualifications</label>
+            <input type="text" placeholder="Bachelor's degree...">
+          </div>
+          <div>
+            <label>Additional Notes</label>
+            <textarea rows="3" placeholder="Any additional information..."></textarea>
+          </div>
+        </div>
+        <div class="submit-wrapper">
+          <button class="submit-btn">Submit</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+
+
+
+
+
+<script>
+  // script.js
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.toggle('show');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const ctx = document.getElementById('activityChart')?.getContext('2d');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Orders',
+          data: [12, 19, 7, 11, 14, 10, 9],
+          backgroundColor: 'rgb(59, 130, 246)',
+          borderRadius: 10
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true, ticks: { color: '#9ca3af' } },
+          x: { ticks: { color: '#9ca3af' } }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+  }
+
+  const profitChart = document.getElementById('profitChart')?.getContext('2d');
+  if (profitChart) {
+    new Chart(profitChart, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: [70, 30],
+          backgroundColor: ['rgb(59, 130, 246)', '#374151'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        cutout: '70%',
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: false }
+        }
+      }
+    });
+  }
+});
+
+</script>
+
+
+  
+</body>
+</html>
