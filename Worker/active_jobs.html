@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sidebar Menu</title>
+  <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
+  <style>
+   body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #1e293b;
+  color: white;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #0f172a;
+  padding-top: 60px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.closed {
+  width: 80px;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  background: #0f172a;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-group:last-child {
+  margin-bottom: 0;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50px;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+  overflow: hidden; /* Needed to contain pseudo-elements */
+  margin:10px 20px 0px 0px;
+}
+
+.nav-item i {
+  font-size: 20px;
+  min-width: 24px;
+  text-align: center;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-item span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 150px;
+  transition: max-width 0.3s ease, opacity 0.3s ease;
+  position:relative;
+  left:20px;
+  top:3px;
+}
+
+.sidebar.closed .nav-item span {
+  max-width: 0;
+  opacity: 0;
+}
+
+/* Hover background box covering full width */
+.nav-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width:100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -2;
+}
+
+.nav-item:hover::before {
+  opacity: 1;
+}
+
+/* --- Active blue left bar --- */
+.active-bar {
+  position: absolute;
+  left: 0;
+  width: 6px;
+  height: 50px;
+  background-color: #2563eb;
+  border-radius: 0 4px 4px 0;
+  transition: transform 0.3s ease;
+}
+
+/* --- Active blue background box --- */
+.active-box {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 50px;
+  background-color: #2563eb;
+  border-radius: 8px;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+/* Icon bounce animation */
+.icon-bounce {
+  animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Bottom button margin */
+.bottom-buttons {
+  margin-top: auto;
+  margin-bottom: 90px;
+}
+
+/* --- Icon & Text Hover Colors --- */
+.nav-item:hover i,
+.nav-item:hover span {
+  color: #2563eb;
+}
+
+/* Active item — icon & text stays white */
+.nav-item.active i,
+.nav-item.active span {
+  color: white;
+}
+
+/* Prevent hover blue on active item */
+.nav-item.active:hover i,
+.nav-item.active:hover span {
+  color: white;
+}
+
+.nav-items
+{
+  position:relative;
+
+  left:30px;
+
+ 
+}
+
+.nav-item.active::before {
+  opacity: 0 !important;
+}
+
+  </style>
+</head>
+<body>
+
+  <!--======================== sidebar ===============================-->
+  <div class="toggle-btn" id="toggleBtn">
+    <i class="uil uil-bars" id="toggleIcon"></i>
+  </div>
+
+  <div class="sidebar closed" id="sidebar">
+    <div class="menu">
+      <div class="menu-items" id="menuItems">
+        <div class="active-bar" id="activeBar"></div>
+        <div class="active-box" id="activeBox"></div>
+
+        <div class="nav-group">
+          <a href="#" class="nav-item ">
+            <div class="nav-items">
+            <i class="uil uil-estate"></i><span>Home</span>
+            </div>
+          </a>
+          <a href="available-jobs.html" class="nav-item">
+             <div class="nav-items">
+            <i class="uil uil-briefcase-alt"></i><span>Jobs</span>
+            </div>
+          </a>
+          <a href="#" class="nav-item active">
+             <div class="nav-items">
+            <i class="uil uil-file-alt"></i><span>Applications</span>
+            </div>
+          </a>
+          <a href="#" class="nav-item">
+             <div class="nav-items">
+            <i class="uil uil-user"></i><span>Profile</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="bottom-buttons">
+          <div class="nav-group">
+            <a href="#" class="nav-item">
+               <div class="nav-items">
+              <i class="uil uil-setting"></i><span>Settings</span>
+              </div>
+            </a>
+            <a href="#" class="nav-item">
+               <div class="nav-items">
+              <i class="uil uil-signout"></i><span>Sign Out</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+
+
+
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggleBtn');
+    const toggleIcon = document.getElementById('toggleIcon');
+    const navItems = document.querySelectorAll('.nav-item');
+    const activeBar = document.getElementById('activeBar');
+    const activeBox = document.getElementById('activeBox');
+
+    let activeIndex = 2;
+    let isOpen = false;
+
+    function updateActivePosition(index) {
+      const item = navItems[index];
+      const offsetTop = item.offsetTop;
+
+      activeBar.style.transform = `translateY(${offsetTop}px)`;
+      activeBox.style.transform = `translateY(${offsetTop}px)`;
+
+      navItems.forEach(i => i.classList.remove('icon-bounce'));
+      item.classList.add('icon-bounce');
+    }
+
+   navItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    // Remove previous active class
+    navItems.forEach(i => i.classList.remove('active'));
+
+    // Set new active index
+    activeIndex = index;
+
+    // Add active class to clicked item
+    item.classList.add('active');
+
+    // Move active bar and box
+    updateActivePosition(index);
+  });
+});
+
+    toggleBtn.addEventListener('click', () => {
+      isOpen = !isOpen;
+      sidebar.classList.toggle('closed');
+      toggleIcon.classList.toggle('uil-bars', !isOpen);
+      toggleIcon.classList.toggle('uil-times', isOpen);
+      updateActivePosition(activeIndex);
+    });
+
+    window.addEventListener('load', () => {
+      updateActivePosition(activeIndex);
+    });
+  </script>
+</body>
+</html>

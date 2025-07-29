@@ -27,9 +27,10 @@
         transform: translateY(-6px);
       }
     }
+
   </style>
 </head>
-<body class="font-sans">
+<body class="font-sans" >
 
 <!-- ✅ Wrapper with sidebar() -->
 <div class="flex h-screen overflow-hidden" x-data="sidebar()" x-init="init()">
@@ -52,6 +53,7 @@
     <!-- Blue Line -->
     <div class="absolute bg-blue-600 w-1 h-12 rounded-r active-bar z-10"
          :style="'transform: translateY(' + translateY + 'px)'"></div>
+  
 
     <!-- TOP MENU WRAPPER -->
 <div class="mt-6">
@@ -106,12 +108,12 @@
     </div>
     </div>
 
-  </div>
+</div>
 
   
   <!-- Main Content -->
 <!-- Header -->
-  <div :class="open ? 'ml-60' : 'ml-16'" class="flex-1 flex flex-col overflow-auto transition-all duration-300">
+  <div :class="open ? 'ml-60' : 'ml-16'" class="flex-1 flex flex-col overflow-auto">
     <header class="flex items-center justify-between bg-gray-800 px-6 py-4 md:py-6">
      
       <input type="text" placeholder="Search..." class="bg-gray-700 text-sm px-4 py-2 rounded-lg w-1/4 placeholder-gray-400 focus:outline-none"/>
@@ -138,7 +140,7 @@
     </header>
 
    <main
-  class="transition-all duration-300 max-w-screen-xl w-full relative pl-[5rem]"
+  class=" max-w-screen-xl w-full relative pl-[5rem]"
   :class="open ? 'ml-60' : 'ml-16' overflow-x-hidden"
 >
   <div
@@ -147,7 +149,7 @@
   >
   <!-- Repeat this box as needed -->
 
-  <div class="relative h-[340px] w-[530px] rounded-[20px] shadow-[0_8px_32px_rgba(4,6,134,0.25)] bg-[#f2fcfa] hover:bg-[#e9fffc] transition-colors duration-300">
+  <div class="relative h-[340px] w-[530px] rounded-[20px] shadow-[0_8px_32px_rgba(4,6,134,0.25)] bg-[#f2fcfa] hover:bg-[#e9fffc] ">
     <h4 class="relative left-[12px] top-[11px] font-semibold text-lg text-red-500">Overhead Tank Cleaning Helper</h4>
 
     <div class="relative left-[280px] top-[-11px] w-[68px] h-[25px] rounded-[11px] bg-[#fddede] text-[#d10000]">
@@ -423,21 +425,15 @@
       <p class="relative z-[2] left-[67px] top-[6px] text-[#333] group-hover:text-white">View Details</p>
     </div>
   </div>
-  </div>
 
-
-
-
-
-
-
-
+ </div>  
 
 </div>
+
+
 </main>
 
 
-</div>
 
 <!-- Alpine Sidebar Function -->
 
@@ -456,15 +452,16 @@
       'Settings': '⚙️',
       'Sign Out': '🚪'
     },
-    activeIndex: 0,
+    activeIndex:1,
     topCount: 6,
     itemHeight: 56,
     offsetTop: 79,
     bottomOffsetFix: 11, // ✅ This aligns bottom buttons like top ones
 
     init() {
-      this.setActive(1);
-    },
+      setActive(1);
+      },
+
 
     setActive(index) {
       this.activeIndex = index;
@@ -480,6 +477,7 @@
     7: "signout.html"
   };
 
+   
   
       setTimeout(() => {
         const icons = document.querySelectorAll('.icon-bounce');
