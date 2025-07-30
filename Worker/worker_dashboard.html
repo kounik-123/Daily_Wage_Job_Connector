@@ -29,7 +29,7 @@
     }
   </style>
 </head>
-<body class="font-sans">
+<body class="font-sans" >
 
 <!-- ✅ Wrapper with sidebar() -->
 <div class="flex h-screen overflow-hidden" x-data="sidebar()" x-init="init()">
@@ -331,63 +331,80 @@
 <!-- 🔁 REPLACE THE SIDEBAR FUNCTION WITH THIS UPDATED ONE -->
 <script>
   function sidebar() {
-  return {
-    open: true,
-    menu: ['Home', 'Available Jobs', 'Active Jobs', 'Past Jobs', 'Wallet', 'Search Jobs', 'Settings', 'Sign Out'],
-    icons: {
-      'Home': '🏠',
-      'Available Jobs': '💼',
-      'Active Jobs': '☑️',
-      'Past Jobs': '🕓',
-      'Wallet': '💳',
-      'Search Jobs': '🔍',
-      'Settings': '⚙️',
-      'Sign Out': '🚪'
-    },
-    activeIndex: 0,
-    topCount: 6,
-    itemHeight: 56,
-    offsetTop: 79,
-    bottomOffsetFix: 11, // ✅ This aligns bottom buttons like top ones
+    return {
+      open: true,
+      menu: [
+        'Home', 'Available Jobs', 'Active Jobs', 'Past Jobs',
+        'Wallet', 'Search Jobs', 'Settings', 'Sign Out'
+      ],
+      icons: {
+        'Home': '🏠',
+        'Available Jobs': '💼',
+        'Active Jobs': '☑️',
+        'Past Jobs': '🕓',
+        'Wallet': '💳',
+        'Search Jobs': '🔍',
+        'Settings': '⚙️',
+        'Sign Out': '🚪'
+      },
+      activeIndex: 0,
+      topCount: 6,
+      itemHeight: 56,
+      offsetTop: 79,
+      bottomOffsetFix: 11,
 
-    init() {
-      this.setActive(0);
-    },
+      init() {
+        const path = window.location.pathname;
 
-    setActive(index) {
-      this.activeIndex = index;
-       // Redirect logic
-  const pageRoutes = {
-    0: "worker_dashboard.html",         // Home
-    1: "available-jobs.html",
-    2: "active-jobs.html",   // Active Jobs
-    3: "past-jobs.html",
-    4: "wallet.html",
-    5: "search-jobs.html",
-    6: "settings.html",
-    7: "signout.html"
-  };
+        if (path.includes("worker_dashboard.html")) this.activeIndex = 0;
+        else if (path.includes("available-jobs.html")) this.activeIndex = 1;
+        else if (path.includes("active-jobs.html")) this.activeIndex = 2;
+        else if (path.includes("past-jobs.html")) this.activeIndex = 3;
+        else if (path.includes("wallet.html")) this.activeIndex = 4;
+        else if (path.includes("search-jobs.html")) this.activeIndex = 5;
+        else if (path.includes("settings.html")) this.activeIndex = 6;
+        else if (path.includes("signout.html")) this.activeIndex = 7;
+      },
 
-  
-      setTimeout(() => {
-        const icons = document.querySelectorAll('.icon-bounce');
-        icons.forEach(icon => icon.classList.remove('icon-bounce'));
-      }, 400);
-    },
+      setActive(index) {
+        this.activeIndex = index;
 
-    get translateY() {
-      if (this.activeIndex < this.topCount) {
-        return this.offsetTop + this.activeIndex * this.itemHeight;
-      } else {
-        const bottomOffset = this.$refs.menuBottom?.offsetTop || 0;
-        const bottomIndex = this.activeIndex - this.topCount;
-        return bottomOffset + this.bottomOffsetFix + bottomIndex * this.itemHeight;
+        const pageRoutes = {
+          0: "worker_dashboard.html",
+          1: "available-jobs.html",
+          2: "active-jobs.html",
+          3: "past-jobs.html",
+          4: "wallet.html",
+          5: "search-jobs.html",
+          6: "settings.html",
+          7: "signout.html"
+        };
+
+        // Redirect to selected page
+      
+
+        // Remove bounce effect after a short delay
+        setTimeout(() => {
+          const icons = document.querySelectorAll('.icon-bounce');
+          icons.forEach(icon => icon.classList.remove('icon-bounce'));
+        }, 400);
+      },
+
+      get translateY() {
+        if (this.activeIndex < this.topCount) {
+          return this.offsetTop + this.activeIndex * this.itemHeight;
+        } else {
+          const bottomOffset = this.$refs.menuBottom?.offsetTop || 0;
+          const bottomIndex = this.activeIndex - this.topCount;
+          return bottomOffset + this.bottomOffsetFix + bottomIndex * this.itemHeight;
+        }
       }
-    }
-  };
-}
-
+    };
+  }
 </script>
+
+
+
 
 </body>
 </html>
