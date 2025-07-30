@@ -24,28 +24,82 @@
   </aside>
 
   <!-- Main -->
-  <div class="main">
-    <!-- Header -->
-    <header class="header">
-      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-      <input type="text" placeholder="Search..." class="search">
-      <div class="profile">
-        <div class="icon">📧</div>
-        <div class="icon">🔔</div>
-        <div class="profile-box">
-          <div class="avatar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="avatar-icon" viewBox="0 0 24 24">
-              <path d="M5.121 17.804A8.966 8.966 0 0112 15c2.042 0 3.918.68 5.379 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              stroke="white" stroke-width="2" fill="none"/>
-            </svg>
-          </div>
-          <div class="profile-info">
-            <div class="name">John Employer</div>
-            <div class="email">john@techcorp.com</div>
+  <div class="toggle-btn" id="toggleBtn">
+    <i class="uil uil-bars" id="toggleIcon"></i>
+  </div>
+
+  <div class="sidebar closed" id="sidebar">
+    <div class="menu">
+      <div class="menu-items" id="menuItems">
+        <div class="active-bar" id="activeBar"></div>
+        <div class="active-box" id="activeBox"></div>
+
+        <div class="nav-group">
+          <a href="#" class="nav-item">
+            <div class="nav-items">
+              <i class="uil uil-estate"></i><span>Home</span>
+            </div>
+          </a>
+          <a href="#" class="nav-item">
+            <div class="nav-items">
+              <i class="uil uil-briefcase-alt"></i><span>Jobs</span>
+            </div>
+          </a>
+          <a href="#" class="nav-item active">
+            <div class="nav-items">
+              <i class="uil uil-file-alt"></i><span>Applications</span>
+            </div>
+          </a>
+          <a href="#" class="nav-item">
+            <div class="nav-items">
+              <i class="uil uil-user"></i><span>Profile</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="bottom-buttons">
+          <div class="nav-group">
+            <a href="#" class="nav-item">
+              <div class="nav-items">
+                <i class="uil uil-setting"></i><span>Settings</span>
+              </div>
+            </a>
+            <a href="#" class="nav-item">
+              <div class="nav-items">
+                <i class="uil uil-signout"></i><span>Sign Out</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="search-box">
+      <input type="text" id="jobSearch" placeholder="Search jobs..." class="searchInput">
+      <i class="uil uil-search"></i>
+    </div>
+
+    <div class="top-icons" style="display: flex; align-items: center; gap: 20px;">
+      <img src="https://flagcdn.com/w40/in.png" alt="India Flag" style="width: 24px; height: 18px; border-radius: 50%;" />
+      <div style="position: relative;">
+        <i class="uil uil-envelope"></i>
+        <span style="position: absolute; top: -6px; right: -10px; background: #3b82f6; color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%;">5</span>
+      </div>
+      <div style="position: relative;">
+        <i class="uil uil-bell"></i>
+        <span style="position: absolute; top: -6px; right: -10px; background: #f97316; color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%;">3</span>
+      </div>
+      <div style="display: flex; align-items: center; background: #1e293b; padding: 6px 10px; border-radius: 8px;">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" style="width: 34px; height: 34px; border-radius: 50%; margin-right: 10px;" />
+        <div style="display: flex; flex-direction: column; line-height: 1.2;">
+          <span style="font-size: 14px; font-weight: bold; color: white;">Anna Adame</span>
+          <span style="font-size: 12px; color: #94a3b8;">Founder</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Content -->
     <main class="content">
@@ -55,29 +109,42 @@
         <div class="stat-box"><h3>Delivered</h3><p>70</p></div>
         <div class="stat-box"><h3>Cancelled</h3><p>5</p></div>
         <div class="stat-box"><h3>Revenue</h3><p>$12k</p></div>
-        <div class="stat-box profit">
-          <div>
-            <h3>Profit</h3>
-            <p>$6759</p>
-            <small>▲ +3%</small>
-          </div>
-          <canvas id="profitChart" width="50" height="50"></canvas>
-        </div>
       </div>
 
-      <!-- Charts & Quick Links -->
-      <div class="charts">
-        <div class="activity">
-          <h3>Activity</h3>
-          <canvas id="activityChart"></canvas>
-        </div>
-        <div class="quick-links">
-          <h3>Quick Links</h3>
-          <div class="link">🎯 Goals</div>
-          <div class="link">🍽️ Popular Dishes</div>
-          <div class="link">📋 Menus</div>
-        </div>
-      </div>
+      <div class="stat-charts-wrapper">
+  <!-- Profit Box -->
+  <div class="stat-box_1 profit">
+    <div class="profit-info">
+      <h3>Profit</h3>
+      <p>$6759</p>
+      <small>▲ +3%</small>
+    </div>
+    <div class="chart-container">
+      <canvas id="profitChart"></canvas>
+    </div>
+  </div>
+
+        
+
+  <!-- Charts & Quick Links -->
+  <div class="charts">
+    <div class="activity">
+      <h3>Activity</h3>
+      <canvas id="activityChart"></canvas>
+    </div>
+    <div class="quick-links">
+      <h3>Quick Links</h3>
+      <div class="link">🎯 Goals</div>
+      <div class="link">🍽️ Popular Dishes</div>
+      <div class="link">📋 Menus</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+      
 
       <!-- Tables -->
       <div class="tables">
@@ -93,101 +160,79 @@
               <tr><td>Guy Hawkins</td><td>123456</td><td>$98.00</td><td class="red">Cancelled</td></tr>
             </tbody>
           </table>
-        </div>
-        <div class="feedback">
+
+          <div class="feedback">
           <h3>Customer Feedback</h3>
           <div class="feedback-box">
-            <div><strong>Jenny Wilson</strong><p>★★★★★</p><p>Burger was amazing!</p></div>
-            <div><strong>Dianne Russell</strong><p>★★★★☆</p><p>Loved the focaccia.</p></div>
-            <div><strong>Devon Lane</strong><p>★★★★★</p><p>Great ambience!</p></div>
+            <div><strong>Jenny Wilson</strong><p>★★★★★</p><h4>Burger was amazing!</h4></div>
+            <div><strong>Dianne Russell</strong><p>★★★★☆</p><h4>Loved the focaccia.</h4></div>
+            <div><strong>Devon Lane</strong><p>★★★★★</p><h4>Great ambience!</h4></div>
           </div>
         </div>
+        </div>
+        
       </div>
     </main>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
 <script>
   function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  sidebar.classList.toggle('open');
-}
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
+  }
 
-function setActive(el) {
-  document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-  el.classList.add('active');
-}
+  function setActive(el) {
+    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+    el.classList.add('active');
+  }
 
-// Chart.js - Activity Chart
-const activityCtx = document.getElementById('activityChart').getContext('2d');
-new Chart(activityCtx, {
-  type: 'bar',
-  data: {
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    datasets: [{
-      label: 'Orders',
-      data: [12, 19, 7, 11, 14, 10, 9],
-      backgroundColor: 'rgb(59, 130, 246)',
-      borderRadius: 10
-    }]
-  },
-  options: {
-    scales: {
-      y: { beginAtZero: true, ticks: { color: '#9ca3af' }},
-      x: { ticks: { color: '#9ca3af' }}
+  const activityCtx = document.getElementById('activityChart').getContext('2d');
+  new Chart(activityCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Orders',
+        data: [12, 19, 7, 11, 14, 10, 9],
+        backgroundColor: 'rgb(59, 130, 246)',
+        borderRadius: 10
+      }]
     },
-    plugins: {
-      legend: { display: false }
+    options: {
+      scales: {
+        y: { beginAtZero: true, ticks: { color: '#9ca3af' }},
+        x: { ticks: { color: '#9ca3af' }}
+      },
+      plugins: { legend: { display: false } }
     }
-  }
-});
+  });
 
-// Chart.js - Profit Chart
-const profitCtx = document.getElementById('profitChart').getContext('2d');
-new Chart(profitCtx, {
-  type: 'doughnut',
-  data: {
-    datasets: [{
-      data: [70, 30],
-      backgroundColor: ['rgb(59, 130, 246)', '#374151'],
-      borderWidth: 0
-    }]
-  },
-  options: {
-    cutout: '70%',
-    plugins: {
-      legend: { display: false },
-      tooltip: { enabled: false }
+  const profitCtx = document.getElementById('profitChart').getContext('2d');
+  new Chart(profitCtx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [70, 30],
+        backgroundColor: ['rgb(59, 130, 246)', '#374151'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      cutout: '70%',
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false }
+      }
     }
-  }
-});
+  });
 
-
-
-
-
-// Keep existing toggleSidebar and setActive...
-
-// Optional: Close sidebar when window is resized above 768px
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) {
-    document.getElementById('sidebar').classList.remove('open');
-  }
-});
-
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      document.getElementById('sidebar').classList.remove('open');
+    }
+  });
 </script>
-
-
-
-
 
 </body>
 </html>
