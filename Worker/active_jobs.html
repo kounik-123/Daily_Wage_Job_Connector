@@ -697,9 +697,11 @@
       updateActivePosition(activeIndex);
     });
 
-    window.addEventListener('load', () => {
-      updateActivePosition(activeIndex);
-    });
+  window.addEventListener('load', () => {
+  setTimeout(() => {
+    updateActivePosition(activeIndex);
+  }, 100); // Add a small delay to trigger transition on load
+});
 
     const searchInput = document.getElementById('jobSearch');
     const jobCards = document.querySelectorAll('.job-card');

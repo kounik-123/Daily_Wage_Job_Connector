@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar Layout</title>
+  <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!--==============================Sidebar===============================-->
+  <button class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">
+  <i id="toggleIcon" class="uil uil-times"></i>
+</button>
+
+
+  <div class="sidebar" id="sidebar">
+    <div class="menu">
+      <div class="menu-items" id="menuItems">
+        <div class="active-bar" id="activeBar"></div>
+        <div class="active-box" id="activeBox"></div>
+
+        <div class="nav-group">
+          <div class="nav-item active" onclick="switchPage('dashboard', this)">
+            <div class="nav-items">
+              <i class="uil uil-estate"></i><span>DashBoard</span>
+            </div>
+          </div>
+          <div class="nav-item" onclick="switchPage('available jobs', this)">
+            <div class="nav-items">
+              <i class="uil uil-briefcase-alt"></i><span>Available Jobs</span>
+            </div>
+          </div>
+          <div class="nav-item" onclick="switchPage('active jobs', this)">
+            <div class="nav-items">
+              <i class="uil uil-check-circle"></i><span>Active Jobs</span>
+            </div>
+          </div>
+
+          <div class="nav-item" onclick="switchPage('past jobs', this)">
+            <div class="nav-items">
+             <i class="uil uil-clock"></i><span>Past Jobs</span>
+            </div>
+          </div>
+
+           <div class="nav-item" onclick="switchPage('wallet', this)">
+            <div class="nav-items">
+             <i class="uil uil-wallet"></i><span>Wallet</span>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div class="nav-group bottom-buttons">
+          <div class="nav-item" onclick="switchPage('settings', this)">
+            <div class="nav-items">
+              <i class="uil uil-setting"></i><span>Settings</span>
+            </div>
+          </div>
+          <div class="nav-item" onclick="switchPage('signout', this)">
+            <div class="nav-items">
+              <i class="uil uil-signout"></i><span>Sign Out</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--==============================Top Bar============================-->
+
+  <div class="topbar">
+  <div class="search-box">
+    <input type="text" id="jobSearch" placeholder="Search jobs..." class="searchInput">
+    <i class="uil uil-search"></i>
+  </div>
+
+  <div class="top-icons" style="display: flex; align-items: center; gap: 20px;">
+    <!-- Theme Toggle Icon -->
+    <div onclick="toggleTheme()" title="Toggle Theme">
+      <i id="themeIcon" class="uil uil-moon" style="font-size: 20px; cursor: pointer;"></i>
+    </div>
+
+    <!-- Add to Cart Icon -->
+    <div style="position: relative;">
+      <i class="uil uil-shopping-cart-alt"></i>
+      <span style="position: absolute; top: -6px; right: -10px; background: #10b981; color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%;">6</span>
+    </div>
+
+    <!-- Mail -->
+    <div style="position: relative;">
+      <i class="uil uil-envelope"></i>
+      <span style="position: absolute; top: -6px; right: -10px; background: #3b82f6; color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%;">5</span>
+    </div>
+
+    <!-- Notification -->
+    <div style="position: relative;">
+      <i class="uil uil-bell"></i>
+      <span style="position: absolute; top: -6px; right: -10px; background: #f97316; color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%;">3</span>
+    </div>
+
+    <!-- Profile -->
+    <div style="display: flex; align-items: center; background: #1e293b; padding: 6px 10px; border-radius: 8px;">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" style="width: 34px; height: 34px; border-radius: 50%; margin-right: 10px;" />
+      <div style="display: flex; flex-direction: column; line-height: 1.2;">
+        <span style="font-size: 14px; font-weight: bold; color: white;">Anna Adame</span>
+        <span style="font-size: 12px; color: #94a3b8;">Founder</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!--================================== Main Content =============================-->
+
+  <div class="main-content">
+
+
+    <div id="dashboard" class="page active">
+      <h1>Dashbaord</h1>
+      <p>Welcome to the Home Page.</p>
+    </div>
+
+
+
+
+
+
+
+    <!--==========================Available Jobs=========================-->
+
+    <div id="available jobs" class="page">
+      <h2>Active Jobs</h2>
+    <div class="active-jobs-container">
+       <p id="noResults" style="display:none; color:#f87171; font-weight:bold;">No matching jobs found.</p>
+
+      <!--Job Card 1-->
+      <div class="job-card" data-title="Overhead Tank Cleaning Helper" data-company="Dumdum">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h4 style="margin-bottom: 0;">Overhead Tank Cleaning Helper</h4>
+    <div style="display: flex; gap: 8px;">
+      <span style="color: #f87171; font-size: 12px; background: rgba(255, 0, 0, 0.15); padding: 2px 6px; border-radius: 6px;">Urgent</span>
+      <span style="color: #10b981; font-size: 12px; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 6px;">Available</span>
+    </div>
+  </div>
+
+  <div class="content_1">
+    <p>“Assist in cleaning rooftop water tanks. Tools provided.”</p>
+  </div>
+
+  <div class="content_boxes" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px;">
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-map-marker"></i> <p>Dumdum</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-rupee-sign"></i> <p>550/day</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-clock"></i> <p>7 AM – 11 AM</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-calendar-alt"></i> <p>13/07/2025</p></div>
+  </div>
+
+  <div class="tag" style="margin-top: 12px;">
+    <i class="uis uis-bookmark"></i>
+    <p>Tank Cleaning, Water Hygiene</p>
+  </div>
+
+  <div class="buttons">
+    <div class="apply_now"><p>Apply Now</p></div>
+    <div class="view_details"><p>View Details</p></div>
+  </div>
+</div>
+
+      <!--Job Card 2-->
+     <div class="job-card" data-title="Overhead Tank Cleaning Helper" data-company="Dumdum">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h4 style="margin-bottom: 0;">Overhead Tank Cleaning Helper</h4>
+    <div style="display: flex; gap: 8px;">
+      <span style="color: #f87171; font-size: 12px; background: rgba(255, 0, 0, 0.15); padding: 2px 6px; border-radius: 6px;">Urgent</span>
+      <span style="color: #10b981; font-size: 12px; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 6px;">Available</span>
+    </div>
+  </div>
+
+  <div class="content_1">
+    <p>“Assist in cleaning rooftop water tanks. Tools provided.”</p>
+  </div>
+
+  <div class="content_boxes" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px;">
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-map-marker"></i> <p>Dumdum</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-rupee-sign"></i> <p>550/day</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-clock"></i> <p>7 AM – 11 AM</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-calendar-alt"></i> <p>13/07/2025</p></div>
+  </div>
+
+  <div class="tag" style="margin-top: 12px;">
+    <i class="uis uis-bookmark"></i>
+    <p>Tank Cleaning, Water Hygiene</p>
+  </div>
+
+  <div class="buttons">
+    <div class="apply_now"><p>Apply Now</p></div>
+    <div class="view_details"><p>View Details</p></div>
+  </div>
+
+  
+</div>
+      
+ <!--Job Card 3-->
+    <div class="job-card" data-title="Overhead Tank Cleaning Helper" data-company="Dumdum">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h4 style="margin-bottom: 0;">Overhead Tank Cleaning Helper</h4>
+    <div style="display: flex; gap: 8px;">
+      <span style="color: #f87171; font-size: 12px; background: rgba(255, 0, 0, 0.15); padding: 2px 6px; border-radius: 6px;">Urgent</span>
+      <span style="color: #10b981; font-size: 12px; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 6px;">Available</span>
+    </div>
+  </div>
+
+  <div class="content_1">
+    <p>“Assist in cleaning rooftop water tanks. Tools provided.”</p>
+  </div>
+
+  <div class="content_boxes" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px;">
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-map-marker"></i> <p>Dumdum</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-rupee-sign"></i> <p>550/day</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-clock"></i> <p>7 AM – 11 AM</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-calendar-alt"></i> <p>13/07/2025</p></div>
+  </div>
+
+  <div class="tag" style="margin-top: 12px;">
+    <i class="uis uis-bookmark"></i>
+    <p>Tank Cleaning, Water Hygiene</p>
+  </div>
+
+  <div class="buttons">
+    <div class="apply_now"><p>Apply Now</p></div>
+    <div class="view_details"><p>View Details</p></div>
+  </div>
+</div>
+
+ <!--Job Card 2 (Fixed Version like Job Card 1)-->
+<div class="job-card" data-title="xyz Tank Cleaning Helper" data-company="Dumdum">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h4 style="margin-bottom: 0;">xyz Tank Cleaning Helper</h4>
+    <div style="display: flex; gap: 8px;">
+      <span style="color: #f87171; font-size: 12px; background: rgba(255, 0, 0, 0.15); padding: 2px 6px; border-radius: 6px;">Urgent</span>
+      <span style="color: #10b981; font-size: 12px; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 6px;">Available</span>
+    </div>
+  </div>
+
+  <div class="content_1">
+    <p>“Assist in cleaning rooftop water tanks. Tools provided.”</p>
+  </div>
+
+  <div class="content_boxes" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px;">
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-map-marker"></i> <p>Dumdum</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-rupee-sign"></i> <p>550/day</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-clock"></i> <p>7 AM – 11 AM</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-calendar-alt"></i> <p>13/07/2025</p></div>
+  </div>
+
+  <div class="tag" style="margin-top: 12px;">
+    <i class="uis uis-bookmark"></i>
+    <p>Tank Cleaning, Water Hygiene</p>
+  </div>
+
+  <div class="buttons">
+    <div class="apply_now"><p>Apply Now</p></div>
+    <div class="view_details"><p>View Details</p></div>
+  </div>
+</div>
+
+
+<!--Job Card 4-->
+    <div class="job-card" data-title="Overhead Tank Cleaning Helper" data-company="Dumdum">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h4 style="margin-bottom: 0;">Overhead Tank Cleaning Helper</h4>
+    <div style="display: flex; gap: 8px;">
+      <span style="color: #f87171; font-size: 12px; background: rgba(255, 0, 0, 0.15); padding: 2px 6px; border-radius: 6px;">Urgent</span>
+      <span style="color: #10b981; font-size: 12px; background: rgba(16, 185, 129, 0.15); padding: 2px 6px; border-radius: 6px;">Available</span>
+    </div>
+  </div>
+
+  <div class="content_1">
+    <p>“Assist in cleaning rooftop water tanks. Tools provided.”</p>
+  </div>
+
+  <div class="content_boxes" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px;">
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-map-marker"></i> <p>Dumdum</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-rupee-sign"></i> <p>550/day</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-clock"></i> <p>7 AM – 11 AM</p></div>
+    <div style="display: flex; align-items: center; gap: 6px;"><i class="uil uil-calendar-alt"></i> <p>13/07/2025</p></div>
+  </div>
+
+  <div class="tag" style="margin-top: 12px;">
+    <i class="uis uis-bookmark"></i>
+    <p>Tank Cleaning, Water Hygiene</p>
+  </div>
+
+  <div class="buttons">
+    <div class="apply_now"><p>Apply Now</p></div>
+    <div class="view_details"><p>View Details</p></div>
+  </div>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+    <!--==============================Active Jobs=========================-->
+    <div id="active jobs" class="page">
+      <h1>Applications</h1>
+      <p>View submitted applications.</p>
+    </div>
+
+
+    <div id="past jobs" class="page">
+      <h1>Past Jobs</h1>
+      <p>Manage your profile.</p>
+    </div>
+
+    <div id="wallet" class="page">
+      <h1>Wallet</h1>
+      <p>Manage your profile.</p>
+    </div>
+
+
+
+    <div id="settings" class="page">
+      <h1>Settings</h1>
+      <p>Configure your settings.</p>
+    </div>
+    <div id="signout" class="page">
+      <h1>Sign Out</h1>
+      <p>You have been signed out.</p>
+    </div>
+  </div>
+
+
+
+<!--=========== Script Tag================-->
+
+  <script src="script.js"></script>
+</body>
+</html>
