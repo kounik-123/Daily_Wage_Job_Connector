@@ -2,238 +2,250 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar Layout</title>
+  <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
+  <link rel="stylesheet" href="active_job.css" />
 </head>
 <body>
 
-<div class="container">
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <button class="close-btn" onclick="toggleSidebar()">×</button>
-    <h2>📊 Dashboard</h2>
-    <nav class="nav-links">
-      <a href="dashboard.html" class="active" onclick="setActive(this)">📊 Dashboard</a>
-      <a href="past_job1.html"  onclick="setActive(this)">✅ Post a Job</a>
-      <a href="active_job.html" onclick="setActive(this)">⏰ Active Job</a>
-      <a href="wallet.html" onclick="setActive(this)">💳 Wallet</a>
-      <a href="settings.html" onclick="setActive(this)">⚙️ Settings</a>
-    </nav>
+  <!--==============================Sidebar===============================-->
+  <button class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">
+  <i id="toggleIcon" class="uil uil-times"></i>
+</button>
 
-    <div class="signout-section">
-    <button class="signout-btn" onclick="signOut()">🚪 Sign Out</button>
-  </div>
-  </aside>
 
-  <!-- Main -->
-  <div class="main">
-    <!-- Header -->
-    <header class="header">
-      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-      <input type="text" placeholder="Search..." class="search">
-      <div class="profile">
-        <div class="icon">📧</div>
-        <div class="icon">🔔</div>
-        <div class="profile-box">
-          <div class="avatar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="avatar-icon" viewBox="0 0 24 24">
-              <path d="M5.121 17.804A8.966 8.966 0 0112 15c2.042 0 3.918.68 5.379 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              stroke="white" stroke-width="2" fill="none"/>
-            </svg>
+  <div class="sidebar" id="sidebar">
+    <div class="menu">
+      <div class="menu-items" id="menuItems">
+        <div class="active-bar" id="activeBar"></div>
+        <div class="active-box" id="activeBox"></div>
+
+        <div class="nav-group">
+          <div class="nav-item active" onclick="switchPage('home', this)">
+            <div class="nav-items">
+              <i class="uil uil-estate"></i><span>Home</span>
+            </div>
           </div>
-          <div class="profile-info">
-            <div class="name">John Employer</div>
-            <div class="email">john@techcorp.com</div>
+          <div class="nav-item" onclick="switchPage('jobs', this)">
+            <div class="nav-items">
+              <i class="uil uil-briefcase-alt"></i><span>Jobs</span>
+            </div>
+          </div>
+          <div class="nav-item" onclick="switchPage('applications', this)">
+            <div class="nav-items">
+              <i class="uil uil-file-alt"></i><span>Applications</span>
+            </div>
+          </div>
+          <div class="nav-item" onclick="switchPage('profile', this)">
+            <div class="nav-items">
+              <i class="uil uil-user"></i><span>Profile</span>
+            </div>
           </div>
         </div>
+
+        <div class="nav-group bottom-buttons">
+          <div class="nav-item" onclick="switchPage('settings', this)">
+            <div class="nav-items">
+              <i class="uil uil-setting"></i><span>Settings</span>
+            </div>
+          </div>
+          <div class="nav-item" onclick="switchPage('signout', this)">
+            <div class="nav-items">
+              <i class="uil uil-signout"></i><span>Sign Out</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </header>
+    </div>
+  </div>
+
+  <!--==============================Top Bar============================-->
+
+  <div class="topbar">
+  <div class="search-box">
+    <input type="text" id="jobSearch" placeholder="Search jobs..." class="searchInput">
+    <i class="uil uil-search"></i>
+  </div>
+
+  <div class="top-icons" style="display: flex; align-items: center; gap: 20px;">
+    <!-- Theme Toggle Icon -->
+    <div onclick="toggleTheme()" title="Toggle Theme">
+      <i id="themeIcon" class="uil uil-moon" style="font-size: 20px; cursor: pointer;"></i>
+    </div>
+
+    <!-- Add to Cart Icon -->
+    <div style="position: relative;">
+      <i class="uil uil-shopping-cart-alt"></i>
+      <span style="position: absolute; top: -6px; right: -10px; background: #10b981; color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%;">6</span>
+    </div>
+
+    <!-- Mail -->
+    <div style="position: relative;">
+      <i class="uil uil-envelope"></i>
+      <span style="position: absolute; top: -6px; right: -10px; background: #3b82f6; color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%;">5</span>
+    </div>
+
+    <!-- Notification -->
+    <div style="position: relative;">
+      <i class="uil uil-bell"></i>
+      <span style="position: absolute; top: -6px; right: -10px; background: #f97316; color: white; font-size: 10px; padding: 2px 5px; border-radius: 50%;">3</span>
+    </div>
+
+    <!-- Profile -->
+    <div style="display: flex; align-items: center; background: #1e293b; padding: 6px 10px; border-radius: 8px;">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" style="width: 34px; height: 34px; border-radius: 50%; margin-right: 10px;" />
+      <div style="display: flex; flex-direction: column; line-height: 1.2;">
+        <span style="font-size: 14px; font-weight: bold; color: white;">Anna Adame</span>
+        <span style="font-size: 12px; color: #94a3b8;">Founder</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!--================================== Main Content =============================-->
+
+  <div class="main-content">
+    <div id="home" class="page active">
+      <h1>Home</h1>
+      <p>Welcome to the Home Page.</p>
+    </div>
+    <div id="jobs" class="page">
+      <h1>Jobs</h1>
+      <p>Explore job listings.</p>
+    </div>
+    <div id="applications" class="page">
+      <h1>Applications</h1>
+      <p>View submitted applications.</p>
+    </div>
+    <div id="profile" class="page">
+      <h1>Profile</h1>
+      <p>Manage your profile.</p>
+    </div>
+    <div id="settings" class="page">
+      <h1>Settings</h1>
+      <p>Configure your settings.</p>
+    </div>
+    <div id="signout" class="page">
+      <h1>Sign Out</h1>
+      <p>You have been signed out.</p>
+    </div>
+  </div>
 
  
-    <!-- Content -->
-    <main class="content">
-      <!-- Stats -->
-      <div class="stats">
-        <div class="stat-box"><h3>Total Orders</h3><p>75</p></div>
-        <div class="stat-box"><h3>Delivered</h3><p>70</p></div>
-        <div class="stat-box"><h3>Cancelled</h3><p>5</p></div>
-        <div class="stat-box"><h3>Revenue</h3><p>$12k</p></div>
-      </div>
-
-      <div class="stat-charts-wrapper">
-  <!-- Profit Box -->
-  <div class="stat-box_1 profit">
-    <div class="profit-info">
-      <h3>Profit</h3>
-      <p>$6759</p>
-      <small>▲ +3%</small>
-    </div>
-    <div class="chart-container">
-      <canvas id="profitChart"></canvas>
-    </div>
-  </div>
-
-        
-
-  <!-- Charts & Quick Links -->
-  <div class="charts">
-    <div class="activity">
-  <div class="activity-header">
-    <h3>Activity</h3>
-    <div class="chart-buttons">
-      <button onclick="updateActivityChart('weekly')">Weekly</button>
-      <button onclick="updateActivityChart('monthly')">Monthly</button>
-      <button onclick="updateActivityChart('yearly')">Yearly</button>
-    </div>
-  </div>
-  <canvas id="activityChart"></canvas>
-</div>
-
-
-    <div class="quick-links">
-      <h3>Quick Links</h3>
-      <div class="link">🎯 Goals</div>
-      <div class="link">🍽️ Popular Dishes</div>
-      <div class="link">📋 Menus</div>
-    </div>
-  </div>
-</div>
-
-
-
-
-      
-
-      <!-- Tables -->
-      <div class="tables">
-        <div class="orders">
-          <h3>Recent Orders</h3>
-          <table>
-            <thead>
-              <tr><th>Customer</th><th>Order No</th><th>Amount</th><th>Status</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Wade Warren</td><td>987123</td><td>$128.00</td><td class="green">Delivered</td></tr>
-              <tr><td>Jane Cooper</td><td>456789</td><td>$84.00</td><td class="yellow">Pending</td></tr>
-              <tr><td>Guy Hawkins</td><td>123456</td><td>$98.00</td><td class="red">Cancelled</td></tr>
-            </tbody>
-          </table>
-
-          <div class="feedback">
-          <h3>Customer Feedback</h3>
-          <div class="feedback-box">
-            <div><strong>Jenny Wilson</strong><p>★★★★★</p><h4>Burger was amazing!</h4></div>
-            <div><strong>Dianne Russell</strong><p>★★★★☆</p><h4>Loved the focaccia.</h4></div>
-            <div><strong>Devon Lane</strong><p>★★★★★</p><h4>Great ambience!</h4></div>
-          </div>
-        </div>
-        </div>
-        
-      </div>
-    </main>
-  </div>
-</div>
+   
 
 <script>
 
-  function signOut() {
-  // তুমি এখানে real auth logic দিতে পারো
-  alert("You have been signed out.");
-  window.location.href = 'login.html'; // অথবা তোমার লগইন পেজ
+  const sidebar = document.getElementById("sidebar");
+const toggleBtn = document.getElementById("toggleBtn");
+const activeBar = document.getElementById("activeBar");
+const activeBox = document.getElementById("activeBox");
+const navItems = document.querySelectorAll(".nav-item");
+const pages = document.querySelectorAll(".page");
+
+function toggleSidebar() {
+  const toggleIcon = document.getElementById("toggleIcon");
+
+  sidebar.classList.toggle("closed");
+  toggleBtn.classList.toggle("collapsed-style"); // 🔁 toggle button color
+
+  // Toggle icon: bars (≡) for expanded, X for collapsed
+  if (sidebar.classList.contains("closed")) {
+    toggleIcon.classList.remove("uil-bars");
+    toggleIcon.classList.add("uil-times");
+  } else {
+    toggleIcon.classList.remove("uil-times");
+    toggleIcon.classList.add("uil-bars");
+  }
+
+  updateActivePosition(document.querySelector(".nav-item.active"));
 }
 
-  window.addEventListener('DOMContentLoaded', () => {
-  const profitCtx = document.getElementById('profitChart').getContext('2d');
+function switchPage(id, el) {
+  navItems.forEach((item) => item.classList.remove("active"));
+  el.classList.add("active");
 
-  const centerText = {
-    id: 'centerText',
-    beforeDraw(chart) {
-      const { width, height, ctx } = chart;
-      ctx.restore();
+  const offsetTop = el.offsetTop;
+  activeBar.style.transform = `translateY(${offsetTop}px)`;
+  activeBox.style.transform = `translateY(${offsetTop}px)`;
 
-      const fontSize = (height / 5).toFixed(2);
-      ctx.font = `${fontSize}px sans-serif`;
-      ctx.textBaseline = "middle";
-      ctx.fillStyle = "#ffffff";
+  pages.forEach((page) => page.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
 
-      const text = "70%";
-      const textX = Math.round((width - ctx.measureText(text).width) / 2);
-      const textY = height / 2;
+  el.querySelector("i").classList.add("icon-bounce");
+  setTimeout(() => {
+    el.querySelector("i").classList.remove("icon-bounce");
+  }, 400);
+}
 
-      ctx.fillText(text, textX, textY);
-      ctx.save();
-    }
-  };
+// ✅ Set active position on load
+window.addEventListener("DOMContentLoaded", () => {
+  const activeItem = document.querySelector(".nav-item.active");
+  const offsetTop = activeItem.offsetTop;
+  activeBar.style.transform = `translateY(${offsetTop}px)`;
+  activeBox.style.transform = `translateY(${offsetTop}px)`;
 
-  new Chart(profitCtx, {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        data: [70, 30],
-        backgroundColor: ['rgb(59, 130, 246)', '#374151'],
-        borderWidth: 0
-      }]
-    },
-    options: {
-      cutout: '70%',
-      plugins: {
-        legend: { display: false },
-        tooltip: { enabled: false }
-      },
-      elements: {
-        arc: {
-          borderRadius: 10 // 🎯 Makes edges of doughnut smooth
-        }
-      }
-    },
-    plugins: [centerText]
-  });
+  // Set initial icon to bars (≡)
+  document.getElementById("toggleIcon").classList.remove("uil-times");
+  document.getElementById("toggleIcon").classList.add("uil-bars");
 });
 
 
-  const activityCtx = document.getElementById('activityChart').getContext('2d');
 
-  let activityChart = new Chart(activityCtx, {
-    type: 'bar',
-    data: {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      datasets: [{
-        label: 'Orders',
-        data: [12, 19, 7, 11, 14, 10, 9],
-        backgroundColor: 'rgb(59, 130, 246)',
-        borderRadius: 10
-      }]
-    },
-    options: {
-      scales: {
-        y: { beginAtZero: true, ticks: { color: '#9ca3af' }},
-        x: { ticks: { color: '#9ca3af' }}
-      },
-      plugins: { legend: { display: false } }
-    }
-  });
+function toggleTheme() {
+  const body = document.body;
+  const icon = document.getElementById('themeIcon');
+  const topbar = document.querySelector('.topbar');
 
-  function updateActivityChart(range) {
-    let labels = [];
-    let data = [];
-
-    if (range === 'weekly') {
-      labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-      data = [12, 19, 7, 11, 14, 10, 9];
-    } else if (range === 'monthly') {
-      labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
-      data = [58, 63, 47, 51];
-    } else if (range === 'yearly') {
-      labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
-      data = [320, 280, 340, 300, 310, 330, 360, 400];
-    }
-
-    activityChart.data.labels = labels;
-    activityChart.data.datasets[0].data = data;
-    activityChart.update();
+  if (body.classList.contains('dark')) {
+    body.classList.remove('dark');
+    body.classList.add('light');
+    topbar.classList.remove('dark');
+    topbar.classList.add('light');
+    icon.classList.remove('uil-sun');
+    icon.classList.add('uil-moon');
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.classList.remove('light');
+    body.classList.add('dark');
+    topbar.classList.remove('light');
+    topbar.classList.add('dark');
+    icon.classList.remove('uil-moon');
+    icon.classList.add('uil-sun');
+    localStorage.setItem('theme', 'dark');
   }
+}
+
+// Load theme from localStorage
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  const body = document.body;
+  const icon = document.getElementById('themeIcon');
+  const topbar = document.querySelector('.topbar');
+
+  body.classList.add(savedTheme);
+  topbar.classList.add(savedTheme);
+
+  if (savedTheme === 'dark') {
+    icon.classList.remove('uil-moon');
+    icon.classList.add('uil-sun');
+  } else {
+    icon.classList.remove('uil-sun');
+    icon.classList.add('uil-moon');
+  }
+});
+
+
+
+
+
+ 
+
+  
+
 </script>
 
 
