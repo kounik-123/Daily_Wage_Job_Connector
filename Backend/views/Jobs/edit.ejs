@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Job</title>
+  <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #1e293b;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px 4px rgba(37, 99, 235, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #f8fafc;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea {
+      padding: 0.7rem 1rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #334155;
+      color: #e2e8f0;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #94a3b8;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    button[type="submit"] {
+      background-color: #3b82f6;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Edit Job</h2>
+    <form method="POST" action="/jobListing/<%= JobListing._id %>?_method=PUT">
+      <input name="jobListing[jobTitle]" value="<%= JobListing.jobTitle %>" type="text" required>
+
+      <textarea name="jobListing[jobDescription]" required><%= JobListing.jobDescription %></textarea>
+
+      <input name="jobListing[jobPay]" value="<%= JobListing.jobPay %>" type="number" required>
+
+      <input name="jobListing[jobTime]" value="<%= JobListing.jobTime %>" type="text" required>
+
+      <input name="jobListing[jobDate]" type="date" value="<%= JobListing.jobDate.toISOString().split('T')[0] %>" required>
+
+      <input name="jobListing[jobLocation]" value="<%= JobListing.jobLocation %>" type="text" required>
+
+      <input name="jobListing[jobTags]" value="<%= JobListing.jobTags.join(', ') %>" type="text">
+
+      <button type="submit">Update Job</button>
+    </form>
+  </div>
+
+</body>
+</html>
+
+
+

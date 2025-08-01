@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Details</title>
+  <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #1e293b;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 20px 4px rgba(37, 99, 235, 0.4);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #f8fafc;
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #cbd5e1;
+    }
+
+    section {
+      margin-bottom: 1.5rem;
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      color: #93c5fd;
+      margin-bottom: 0.5rem;
+    }
+
+    section ul {
+      padding-left: 1.2rem;
+      color: #d1d5db;
+    }
+
+    .perks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .perk {
+      background-color: #334155;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: #d1d5db;
+    }
+
+    .map {
+      background-color: #334155;
+      height: 150px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      background-color: rgb(85, 85, 226);
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .back-button:hover {
+      background-color: rgb(65, 65, 190);
+    }
+
+    .action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #3b82f6;
+}
+
+.edit-btn:hover {
+  background-color: #2563eb;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+.delete-form {
+  margin: 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 10px;
+  color: #e2e8f0;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-btn {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.modal-btn.confirm {
+  background-color: #ef4444;
+}
+
+.modal-btn.confirm:hover {
+  background-color: #dc2626;
+}
+
+.modal-btn.cancel {
+  background-color: #334155;
+}
+
+.modal-btn.cancel:hover {
+  background-color: #475569;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1><%= JobListing.jobTitle %></h1>
+
+    <div class="meta">
+      <span><i class="uil uil-building"></i> Employer</span>
+      <span><i class="uil uil-location-point"></i> <%= JobListing.jobLocation %></span>
+      <span><i class="uil uil-rupee-sign"></i><%= JobListing.jobPay.toLocaleString("en-IN") %></span>
+      <span><i class="uil uil-clock"></i> <%= JobListing.jobTime %></span>
+      <span><i class="uil uil-calendar-alt"></i> <%= new Date(JobListing.jobDate).toDateString() %></span>
+    </div>
+
+    <section>
+      <h2>Description</h2>
+      <ul>
+        <li><%= JobListing.jobDescription %></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tags</h2>
+      <ul>
+        <li><i class="uil uil-tag-alt"></i> <%= JobListing.jobTags %></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Perks & Benefits</h2>
+      <div class="perks">
+        <div class="perk">Free Lunch</div>
+        <div class="perk">Travel Allowance</div>
+        <div class="perk">Injury Insurance</div>
+        <div class="perk">On-time Payment</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Job Location</h2>
+      <div class="map">[Map Preview / Google Maps]</div>
+    </section>
+
+    <div class="action-buttons">
+  <a href="/JobListing/<%= JobListing._id %>/edit" class="action-btn edit-btn">Edit</a>
+  <form method="POST" action="/jobListing/<%= JobListing._id %>?_method=DELETE" class="delete-form" onsubmit="return confirmDelete()">
+  <button type="submit" class="action-btn delete-btn">Delete</button>
+</form>
+
+</div>
+<a href="/JobListing" class="back-button">← Back to All Jobs</a>
+
+  </div>
+  <!-- Confirmation Modal -->
+<div id="confirmModal" class="modal-overlay">
+  <div class="modal">
+    <p>Are you sure you want to delete this job?</p>
+    <div class="modal-actions">
+      <button id="cancelBtn" class="modal-btn cancel">Cancel</button>
+      <button id="confirmBtn" class="modal-btn confirm">Yes, Delete</button>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+<script>
+  const deleteForm = document.querySelector('.delete-form');
+  const modal = document.getElementById('confirmModal');
+  const confirmBtn = document.getElementById('confirmBtn');
+  const cancelBtn = document.getElementById('cancelBtn');
+
+  // Intercept delete form submission
+  deleteForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    modal.style.display = 'flex';
+  });
+
+  confirmBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+    deleteForm.submit(); // Actually submits form after confirmation
+  });
+
+  cancelBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+
+
